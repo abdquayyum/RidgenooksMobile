@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Image, TextInput } from 'react-native';
-import { router } from 'expo-router';
+import { View, Text, ScrollView, TouchableOpacity, Image, TextInput, RefreshControl } from 'react-native';
+import { useCallback, useState } from 'react';
+import { router, useFocusEffect } from 'expo-router';
 import { MapPin, ChevronDown, Search, Filter, User } from 'lucide-react-native';
 import { useGlobalState } from '../../context/GlobalStateContext';
 import PropertyCard from '../../components/PropertyCard';
@@ -9,14 +10,24 @@ export default function HomeScreen() {
     const { 
     userSettings, currentUser, activeLocation, setShowLocationModal, 
     searchQuery, setSearchQuery, activeTab, setActiveTab, filteredProperties,
-    insets
+    insets,
+    refreshProperties
   } = useGlobalState();
+
+  const [refreshing, setRefreshing] = useState(false);
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    await refreshProperties();
+    setRefreshing(false);
+  }, [refreshProperties]);
+
+  useFocusEffect(useCallback(() => { refreshProperties(); }, [refreshProperties]));
 
   const categories = ["All", "Apartments", "Villas", "Lofts", "Penthouses", "Studios"];
 
   return (
     <View className={`flex-1 ${userSettings?.dark_mode ? 'bg-slate-900' : 'bg-slate-50'}`}>
-      <ScrollView contentContainerStyle={{ paddingBottom: 120 }}>
+      <ScrollView contentContainerStyle={{ paddingBottom: 120 }} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor="#f59e0b" />}>
         <View style={{ paddingTop: (insets?.top || 40) + 30 }} className="pb-10 px-6 bg-slate-900 rounded-b-3xl shadow-md">
           <View className="flex-row justify-between items-center mb-8">
             <TouchableOpacity onPress={() => setShowLocationModal(true)}>

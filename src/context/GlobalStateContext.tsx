@@ -199,7 +199,8 @@ export const GlobalStateProvider = ({ children }) => {
   };
 
   const activeLocation = selectedLocationFilter === 'Auto' ? userLocationText : selectedLocationFilter;
-  const filteredProperties = properties.filter(p => {
+  const filteredProperties,
+    refreshProperties = properties.filter(p => {
     const matchesTab = activeTab === "All" || p.category === activeTab;
     const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || p.location.toLowerCase().includes(searchQuery.toLowerCase());
     let matchesLocation = true;
@@ -219,13 +220,21 @@ export const GlobalStateProvider = ({ children }) => {
     }
   }, [authToken]);
 
+  
+  const refreshProperties = async () => {
+    try {
+      const res = await fetch(`${API_URL}/api/properties`);
+      const data = await res.json();
+      setProperties(data);
+    } catch (err) {
+      console.error("Failed to refresh properties:", err);
+    }
+  };
+
   useEffect(() => {
     if (isAuthenticated && authToken) {
       if(userSettings.location_services) detectLocation();
-      fetch(`${API_URL}/api/properties`)
-        .then(res => res.json())
-        .then(data => setProperties(data))
-        .catch(err => console.error("Failed to load properties:", err));
+      refreshProperties();
       
       loadUserData();
     }
@@ -280,7 +289,8 @@ export const GlobalStateProvider = ({ children }) => {
     getDisplayPrice,
     calculateRegion,
     activeLocation,
-    filteredProperties
+    filteredProperties,
+    refreshProperties
   };
 
   return (
