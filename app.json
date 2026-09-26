@@ -47,7 +47,8 @@
           "enableGooglePay": false
         }
       ],
-      "expo-secure-store"
+      "expo-secure-store",
+      "./withDisableStrictConcurrency.js"
     ],
     "experiments": {
       "typedRoutes": true,
