@@ -110,23 +110,30 @@ export const GlobalStateProvider = ({ children }) => {
   const logout = async () => {
     setAuthToken(null);
     setIsAuthenticated(false);
-    setCurrentUser(null);
-    await SecureStore.deleteItemAsync('userToken');
+    setCurrentUser({ name: "", email: "", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" });
+    try {
+      await SecureStore.deleteItemAsync('userToken');
+      await SecureStore.deleteItemAsync('userData');
+    } catch(e) { console.warn(e); }
   };
 
   const loadUserData = async (emailToLoad) => {
     if(!authToken) return;
     try {
       let res = await fetch(`${API_URL}/api/saved`, { headers: getAuthHeader() });
+      if (res.status === 401) { logout(); return; }
       setSavedPropertyIds(await res.json());
 
       res = await fetch(`${API_URL}/api/transactions`, { headers: getAuthHeader() });
+      if (res.status === 401) { logout(); return; }
       setTransactions(await res.json());
 
       res = await fetch(`${API_URL}/api/requests`, { headers: getAuthHeader() });
+      if (res.status === 401) { logout(); return; }
       setRequests(await res.json());
 
       res = await fetch(`${API_URL}/api/settings`, { headers: getAuthHeader() });
+      if (res.status === 401) { logout(); return; }
       setUserSettings(await res.json());
     } catch(e) {
       console.error("Failed to load user data:", e);
@@ -212,12 +219,14 @@ export const GlobalStateProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    if (authToken) {
+    if (authToken && currentUser?.email) {
       SecureStore.setItemAsync('userToken', authToken).catch(console.warn);
-    } else {
+      SecureStore.setItemAsync('userData', JSON.stringify(currentUser)).catch(console.warn);
+    } else if (!authToken) {
       SecureStore.deleteItemAsync('userToken').catch(console.warn);
+      SecureStore.deleteItemAsync('userData').catch(console.warn);
     }
-  }, [authToken]);
+  }, [authToken, currentUser]);
 
   
   const refreshProperties = async () => {
