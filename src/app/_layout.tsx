@@ -1,18 +1,22 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useColorScheme } from 'react-native';
+import "../global.css";
+import { Stack } from "expo-router";
+import { GlobalStateProvider } from "../context/GlobalStateContext";
+import { StripeProvider } from "@stripe/stripe-react-native";
+import { PaystackProvider } from "react-native-paystack-webview";
+import GlobalModals from "../components/GlobalModals";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
-
-SplashScreen.preventAutoHideAsync();
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+export default function RootLayout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <GlobalStateProvider>
+        <PaystackProvider publicKey="pk_test_314dccd680068de3e230b7714972b3637607fbfb">
+          <StripeProvider publishableKey={process.env.EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY || "pk_test_your_key_here"}>
+            <Stack screenOptions={{ headerShown: false }} />
+          </StripeProvider>
+          <GlobalModals />
+        </PaystackProvider>
+      </GlobalStateProvider>
+    </SafeAreaProvider>
   );
 }
