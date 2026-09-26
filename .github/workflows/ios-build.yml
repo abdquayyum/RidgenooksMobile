@@ -40,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ios-build-ipa
-          path: *.ipa
+          path: '*.ipa'
 
       - name: Submit to App Store Connect (TestFlight)
         env:
