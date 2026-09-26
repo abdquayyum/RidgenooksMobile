@@ -18,13 +18,12 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#0F172A",
-        "foregroundImage": "./assets/logo_transparent.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "foregroundImage": "./assets/logo_transparent.png"
       },
       "predictiveBackGestureEnabled": false,
       "package": "com.ridgenooks.app",
-      "versionCode": 3
+      "versionCode": 3,
+      "softwareKeyboardLayoutMode": "resize"
     },
     "web": {
       "output": "static",

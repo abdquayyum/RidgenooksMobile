@@ -68,7 +68,7 @@ export default function AuthScreen() {
   return (
     <KeyboardAvoidingView 
       className="flex-1 bg-slate-950" 
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', padding: 20 }}>
         <View className="items-center mb-8">
