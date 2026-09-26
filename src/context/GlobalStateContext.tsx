@@ -199,8 +199,7 @@ export const GlobalStateProvider = ({ children }) => {
   };
 
   const activeLocation = selectedLocationFilter === 'Auto' ? userLocationText : selectedLocationFilter;
-  const filteredProperties,
-    refreshProperties = properties.filter(p => {
+  const filteredProperties = properties.filter(p => {
     const matchesTab = activeTab === "All" || p.category === activeTab;
     const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || p.location.toLowerCase().includes(searchQuery.toLowerCase());
     let matchesLocation = true;
