@@ -57,7 +57,7 @@ export default function ChatScreen() {
         </TouchableOpacity>
       </View>
 
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} className="flex-1">
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} className="flex-1">
         <ScrollView ref={scrollViewRef} onContentSizeChange={() => scrollViewRef.current?.scrollToEnd({animated: true})} className={`flex-1 px-5 pt-6 ${userSettings.dark_mode ? 'bg-slate-900' : 'bg-slate-50'}`}>
           <Text className="text-center text-slate-500 text-xs font-semibold mb-6">Today</Text>
           {messages.map((msg, index) => (

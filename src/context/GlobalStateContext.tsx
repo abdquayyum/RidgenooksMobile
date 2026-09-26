@@ -7,6 +7,7 @@ export const GlobalStateContext = createContext();
 
 export const GlobalStateProvider = ({ children }) => {
   const insets = useSafeAreaInsets();
+  const [isReady, setIsReady] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [authToken, setAuthToken] = useState(null);
   
@@ -18,9 +19,10 @@ export const GlobalStateProvider = ({ children }) => {
           setAuthToken(userToken);
           setIsAuthenticated(true);
         }
+        setIsReady(true);
       } catch (e) {
         console.warn(e);
-      }
+      } finally { setIsReady(true); }
     };
     bootstrapAsync();
   }, []);
@@ -231,7 +233,7 @@ export const GlobalStateProvider = ({ children }) => {
 
   const value = {
     insets,
-    isAuthenticated, setIsAuthenticated, logout,
+    isReady, isAuthenticated, setIsAuthenticated, logout,
     authToken, setAuthToken,
     currentScreen, setCurrentScreen,
     activeTab, setActiveTab,

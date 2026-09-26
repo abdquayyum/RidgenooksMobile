@@ -6,7 +6,7 @@ import { useGlobalState } from '../context/GlobalStateContext';
 const LOGO_TRANSPARENT_SRC = require('../../assets/logo_transparent.png');
 
 export default function AuthScreen() {
-  const { isAuthenticated, setIsAuthenticated, setAuthToken, API_URL, setCurrentUser } = useGlobalState();
+  const { isReady, isAuthenticated, setIsAuthenticated, setAuthToken, API_URL, setCurrentUser } = useGlobalState();
   const [isRegister, setIsRegister] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -15,6 +15,7 @@ export default function AuthScreen() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
+  if (!isReady) return null;
   if (isAuthenticated) {
     return <Redirect href="/(tabs)" />;
   }
@@ -68,7 +69,7 @@ export default function AuthScreen() {
   return (
     <KeyboardAvoidingView 
       className="flex-1 bg-slate-950" 
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
       <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', padding: 20 }}>
         <View className="items-center mb-8">
