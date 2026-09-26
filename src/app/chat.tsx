@@ -12,7 +12,7 @@ export default function ChatScreen() {
   useEffect(() => {
     if (currentUser?.email) {
       // ws url hardcoded for local test logic, matching the previous logic
-      const wsUrl = `ws://192.168.1.160:8000/ws/chat/${currentUser.email}`;
+      const wsUrl = `wss://api.ridgenooksinc.com/ws/chat/${currentUser.email}`;
       ws.current = new WebSocket(wsUrl);
       
       ws.current.onmessage = (e) => {
