@@ -11,7 +11,7 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <GlobalStateProvider>
         <PaystackProvider publicKey="pk_test_314dccd680068de3e230b7714972b3637607fbfb">
-          <StripeProvider publishableKey={process.env.EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY || "pk_test_your_key_here"}>
+          <StripeProvider publishableKey={process.env.EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY || "pk_test_51Ser79BkXz3IrSREgfolHBSyAuugOH8NtlC7rLkaEB8OALbIiTd54G6IgMym6FRwH8Oc25Wcq7x7cUpHDFs01diz00sPYiWTOH"}>
             <Stack screenOptions={{ headerShown: false }} />
           </StripeProvider>
           <GlobalModals />
