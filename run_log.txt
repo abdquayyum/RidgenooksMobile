@@ -1,0 +1,1095 @@
+build-and-submit-ios	Set up job	﻿2026-09-26T21:07:24.2694910Z Current runner version: '2.337.0'
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2712460Z ##[group]Runner Image Provisioner
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2713020Z Hosted Compute Agent
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2713390Z Version: 20260828.587
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2713800Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2714260Z Build Date: 2026-08-28T16:44:25Z
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2748230Z Worker ID: {62e17a57-a26b-4fdc-a1e2-ea8458f5bc96}
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2748720Z Azure Region: westus
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2749060Z ##[endgroup]
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2750240Z ##[group]Operating System
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2750630Z macOS
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2750920Z 26.6.2
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2751220Z 25G83
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2751510Z ##[endgroup]
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2751830Z ##[group]Runner Image
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2752190Z Image: macos-26-arm64
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2752520Z Version: 20260907.0351.1
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2753210Z Included Software: https://github.com/actions/runner-images/blob/macos-26-arm64/20260907.0351/images/macos/macos-26-arm64-Readme.md
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2754240Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-26-arm64%2F20260907.0351
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2754840Z ##[endgroup]
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2755580Z ##[group]GITHUB_TOKEN Permissions
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2756730Z Contents: read
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2757060Z Metadata: read
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2757380Z Packages: read
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2757700Z ##[endgroup]
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2758980Z Secret source: Actions
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2759490Z Cache mode: write
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2759890Z Prepare workflow directory
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2954920Z Prepare all required actions
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.2986370Z Getting action download info
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.6212910Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.8346960Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+build-and-submit-ios	Set up job	2026-09-26T21:07:24.9221710Z Download action repository 'maxim-lobanov/setup-xcode@v1' (SHA:ed7a3b1fda3918c0306d1b724322adc0b8cc0a90)
+build-and-submit-ios	Set up job	2026-09-26T21:07:25.3980730Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+build-and-submit-ios	Set up job	2026-09-26T21:07:25.5728140Z Complete job name: build-and-submit-ios
+build-and-submit-ios	Checkout Code	﻿2026-09-26T21:07:25.6219370Z ##[group]Run actions/checkout@v4
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6219940Z with:
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6220270Z   repository: olamicreas/RidgenooksMobile
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6223020Z   token: ***
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6223430Z   ssh-strict: true
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6223810Z   ssh-user: git
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6224210Z   persist-credentials: true
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6224600Z   clean: true
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6225010Z   sparse-checkout-cone-mode: true
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6225460Z   fetch-depth: 1
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6225870Z   fetch-tags: false
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6226480Z   show-progress: true
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6226920Z   lfs: false
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6227270Z   submodules: false
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6228310Z   set-safe-directory: true
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6229020Z   allow-unsafe-pr-checkout: false
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.6230250Z ##[endgroup]
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.7741550Z Syncing repository: olamicreas/RidgenooksMobile
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.7742840Z ##[group]Getting Git version info
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.7753170Z Working directory is '/Users/runner/work/RidgenooksMobile/RidgenooksMobile'
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.7754130Z [command]/opt/homebrew/bin/git version
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8241520Z git version 2.55.0
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8252360Z ##[endgroup]
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8260190Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/a90bb22c-fa7b-4cef-b5c4-744c36e6701d/.gitconfig'
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8268920Z Temporarily overriding HOME='/Users/runner/work/_temp/a90bb22c-fa7b-4cef-b5c4-744c36e6701d' before making global git config changes
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8269870Z Adding repository directory to the temporary git global config as a safe directory
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8272860Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/RidgenooksMobile/RidgenooksMobile
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8363930Z Deleting the contents of '/Users/runner/work/RidgenooksMobile/RidgenooksMobile'
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8369790Z ##[group]Initializing the repository
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8373290Z [command]/opt/homebrew/bin/git init /Users/runner/work/RidgenooksMobile/RidgenooksMobile
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8581560Z hint: Using 'master' as the name for the initial branch. This default branch name
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8582610Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8583360Z hint: to use in all of your new repositories, which will suppress this warning,
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8583860Z hint: call:
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8584150Z hint:
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8584670Z hint: 	git config --global init.defaultBranch <name>
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8585240Z hint:
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8585740Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8586440Z hint: 'development'. The just-created branch can be renamed via this command:
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8587120Z hint:
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8587430Z hint: 	git branch -m <name>
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8587780Z hint:
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8588250Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8589010Z Initialized empty Git repository in /Users/runner/work/RidgenooksMobile/RidgenooksMobile/.git/
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8590970Z [command]/opt/homebrew/bin/git remote add origin https://github.com/olamicreas/RidgenooksMobile
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8670800Z ##[endgroup]
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8671460Z ##[group]Disabling automatic garbage collection
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8674520Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8733850Z ##[endgroup]
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8734450Z ##[group]Setting up auth
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8738780Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.8798620Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.9644460Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:25.9708500Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.0482270Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.0547080Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.1260170Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.1317720Z ##[endgroup]
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.1323140Z ##[group]Fetching the repository
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.1324250Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a3c8bb9a77317cd190040697f663d9c7fe3e0dca:refs/remotes/origin/main
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.8929480Z From https://github.com/olamicreas/RidgenooksMobile
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.8932120Z  * [new ref]         a3c8bb9a77317cd190040697f663d9c7fe3e0dca -> origin/main
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.8935590Z ##[endgroup]
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.8936990Z ##[group]Determining the checkout info
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.8938490Z ##[endgroup]
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.8940100Z [command]/opt/homebrew/bin/git sparse-checkout disable
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.9012740Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.9277950Z ##[group]Checking out the ref
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.9288200Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.9458180Z Switched to a new branch 'main'
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.9463420Z branch 'main' set up to track 'origin/main'.
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.9467970Z ##[endgroup]
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.9556620Z [command]/opt/homebrew/bin/git log -1 --format=%H
+build-and-submit-ios	Checkout Code	2026-09-26T21:07:26.9726190Z a3c8bb9a77317cd190040697f663d9c7fe3e0dca
+build-and-submit-ios	Setup Node.js	﻿2026-09-26T21:07:27.0502200Z ##[group]Run actions/setup-node@v4
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:27.0502680Z with:
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:27.0503000Z   node-version: 20
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:27.0503350Z   always-auth: false
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:27.0503690Z   check-latest: false
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:27.0506170Z   token: ***
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:27.0506500Z ##[endgroup]
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:27.2021160Z (node:30879) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:27.2022520Z Attempting to download 20...
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:27.2038570Z (Use `node --trace-deprecation ...` to show where the warning was created)
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:28.2687700Z Acquiring 20.20.2 - arm64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-darwin-arm64.tar.gz
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:28.8487220Z Extracting ...
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:28.8682510Z [command]/usr/bin/tar xz --strip 1 -C /Users/runner/work/_temp/183c0b7c-ca88-40e9-9856-ec9c01641ed8 -f /Users/runner/work/_temp/8267d8d4-1684-4493-9c83-9ffb72754a67
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:29.7203670Z Adding to the cache ...
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:31.4278340Z ##[group]Environment details
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:31.6674400Z node: v20.20.2
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:31.6674900Z npm: 10.8.2
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:31.6675170Z yarn: 1.22.22
+build-and-submit-ios	Setup Node.js	2026-09-26T21:07:31.6675560Z ##[endgroup]
+build-and-submit-ios	Setup Xcode	﻿2026-09-26T21:07:31.6795300Z ##[group]Run maxim-lobanov/setup-xcode@v1
+build-and-submit-ios	Setup Xcode	2026-09-26T21:07:31.6795540Z with:
+build-and-submit-ios	Setup Xcode	2026-09-26T21:07:31.6795700Z   xcode-version: latest-stable
+build-and-submit-ios	Setup Xcode	2026-09-26T21:07:31.6795870Z ##[endgroup]
+build-and-submit-ios	Setup Xcode	2026-09-26T21:07:31.7616420Z Switching Xcode to version 'latest-stable'...
+build-and-submit-ios	Setup Xcode	2026-09-26T21:07:31.8324260Z Xcode is set to 26.6.0 (17F113)
+build-and-submit-ios	Install dependencies	﻿2026-09-26T21:07:31.8415130Z ##[group]Run npm ci || npm install
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:31.8415530Z ^[[36;1mnpm ci || npm install^[[0m
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:31.8471620Z shell: /bin/bash -e {0}
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:31.8471830Z env:
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:31.8472030Z   MD_APPLE_SDK_ROOT: /Applications/Xcode_26.6.app
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:31.8472270Z ##[endgroup]
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:34.1221920Z npm warn deprecated uuid@7.0.3: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.0267410Z 
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.0268070Z > ridgenooks-mobile@1.0.0 postinstall
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.0268910Z > patch-package
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.0269070Z 
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1128230Z patch-package 8.0.1
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1130920Z Applying patches...
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1153700Z expo-modules-jsi@57.0.8 ✔
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1248610Z 
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1249090Z added 719 packages, and audited 720 packages in 14s
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1249320Z 
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1249530Z 79 packages are looking for funding
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1249830Z   run `npm fund` for details
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1701000Z 
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1711040Z 14 moderate severity vulnerabilities
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1711630Z 
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1756590Z To address issues that do not require attention, run:
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1757100Z   npm audit fix
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1757300Z 
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1757590Z To address all issues (including breaking changes), run:
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1757970Z   npm audit fix --force
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1758190Z 
+build-and-submit-ios	Install dependencies	2026-09-26T21:07:46.1758380Z Run `npm audit` for details.
+build-and-submit-ios	Install EAS CLI	﻿2026-09-26T21:07:46.1904870Z ##[group]Run npm install -g eas-cli
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:46.1905120Z ^[[36;1mnpm install -g eas-cli^[[0m
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:46.1937570Z shell: /bin/bash -e {0}
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:46.1937740Z env:
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:46.1937890Z   MD_APPLE_SDK_ROOT: /Applications/Xcode_26.6.app
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:46.1938100Z ##[endgroup]
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:56.5735100Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:56.8231340Z npm warn deprecated rimraf@2.4.5: Rimraf versions prior to v4 are no longer supported
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:56.8233080Z npm warn deprecated glob@6.0.4: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:56.9744350Z npm warn deprecated uuid@7.0.3: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:57.4617170Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:57.5169540Z npm warn deprecated uuid@8.3.2: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:57.5988960Z npm warn deprecated uuid@8.3.2: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:07:57.6703600Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:08:06.7607780Z 
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:08:06.7608340Z added 527 packages in 20s
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:08:06.7608920Z 
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:08:06.7609450Z 69 packages are looking for funding
+build-and-submit-ios	Install EAS CLI	2026-09-26T21:08:06.7609700Z   run `npm fund` for details
+build-and-submit-ios	Run EAS Build (Local iOS)	﻿2026-09-26T21:08:06.7736550Z ##[group]Run eas build --platform ios --local --non-interactive
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:06.7736900Z ^[[36;1meas build --platform ios --local --non-interactive^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:06.7768230Z shell: /bin/bash -e {0}
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:06.7768390Z env:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:06.7768550Z   MD_APPLE_SDK_ROOT: /Applications/Xcode_26.6.app
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:06.7769070Z   EXPO_TOKEN: ***
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:06.7769300Z   EXPO_APPLE_ID: ***
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:06.7769500Z   EAS_NO_VCS: 1
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:06.7769640Z ##[endgroup]
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:07.6496490Z Using EAS CLI without version control system is not recommended, use this mode only if you know what you are doing.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:07.7060290Z 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:07.7062090Z ⚠️ Detected that your app uses Expo Go for development, this is not recommended when building production apps.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:07.7062930Z Learn more: https://expo.fyi/why-not-build-expo-go-for-production
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:07.7063820Z To suppress this warning, set EAS_BUILD_NO_EXPO_GO_WARNING=true.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:07.7064170Z 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:07.7067630Z The field "cli.appVersionSource" is not set, but it will be required in the future. Learn more: https://docs.expo.dev/build-reference/app-versions/
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:08.5170530Z Resolved "production" environment for the build. Learn more: https://docs.expo.dev/eas/environment-variables/#setting-the-environment-for-your-builds
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:08.6043070Z No environment variables with visibility "Plain text" and "Sensitive" found for the "production" environment on EAS.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:08.6044910Z 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:10.5175950Z The field "cli.appVersionSource" is not set, but it will be required in the future. Learn more: https://docs.expo.dev/build-reference/app-versions/
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:10.9739830Z ✔ Using remote iOS credentials (Expo server)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:10.9740280Z 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:11.2021650Z Distribution Certificate is not validated for non-interactive builds.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:11.4527450Z Using App Store Connect API Key from EAS credentials service.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:11.6054860Z - Fetching Apple provisioning profiles
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2682700Z ✔ Fetched Apple provisioning profiles
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2691870Z 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2694880Z Project Credentials Configuration
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2695120Z 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2702140Z Project                   @olamicreas/ridgenooks
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2702570Z Bundle Identifier         com.ridgenooks.app
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2702790Z                           
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2703000Z App Store Configuration   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2703190Z                           
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2703370Z Distribution Certificate  
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2703690Z Serial Number             63DE8D7A91A24A3B39124B29CAE9B6F1
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2704060Z Expiration Date           Sat, 21 Aug 2027 15:40:51 UTC
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2704470Z Apple Team                2R4679C9P5 (AbdulQuayyum Oyedotun (Individual))
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2704840Z Updated                   1 month ago
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2705050Z                           
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2705270Z Provisioning Profile      
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2705520Z Developer Portal ID       9225N5A4DK
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2705850Z Status                    active
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2706170Z Expiration                Sat, 21 Aug 2027 15:40:51 UTC
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2706560Z Apple Team                2R4679C9P5 (AbdulQuayyum Oyedotun (Individual))
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2706880Z Updated                   8 hours ago
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2707080Z                           
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2707450Z All credentials are ready to build @olamicreas/ridgenooks (com.ridgenooks.app)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.2707720Z 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:12.4689740Z - Computing project fingerprint
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:16.0416960Z ✔ Computed project fingerprint
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:20.9621800Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:21.0065090Z npm warn deprecated rimraf@2.4.5: Rimraf versions prior to v4 are no longer supported
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:21.1461770Z npm warn deprecated glob@6.0.4: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:21.4632680Z npm warn deprecated uuid@7.0.3: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:21.5331780Z npm warn deprecated uuid@8.3.2: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:21.5791750Z npm warn deprecated uuid@9.0.1: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0806610Z [SETUP_WORKINGDIR] Preparing workingdir /var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0838430Z [START_BUILD] Starting build
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0839450Z   "job": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0839650Z     "type": "managed",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0839840Z     "platform": "ios",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0840050Z     "projectArchive": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0840250Z       "type": "PATH",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0840900Z       "path": "/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-cli-nodejs/fd36d223-aba2-461e-ab01-5b711689840a.tar.gz"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0841390Z     },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0841580Z     "projectRootDirectory": ".",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0842340Z     "builderEnvironment": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0842570Z       "image": "latest",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0842760Z       "env": {}
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0842940Z     },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0843100Z     "cache": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0843260Z       "disabled": false,
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0843410Z       "paths": [],
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0843550Z       "clear": false
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0843690Z     },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0843810Z     "updates": {},
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0843950Z     "scheme": "Ridgenooks",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0844120Z     "username": "olamicreas",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0844290Z     "experimental": {},
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0844450Z     "mode": "build",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0844600Z     "triggeredBy": "EAS_CLI",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0844830Z     "appId": "6422332d-c9a9-4fbd-8e6a-a119d7c0e49f",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0845130Z     "initiatingUserId": "111d6b7c-7a91-4431-8f03-0f2d8ff66bfb"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.0845360Z   }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1216100Z [PREPARE_PROJECT] Normalizing project source permissions
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1304970Z [READ_EAS_JSON] Using eas.json:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1305350Z [READ_EAS_JSON] {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1305570Z   "cli": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1305750Z     "version": ">= 3.8.1"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1305920Z   },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1306040Z   "build": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1306180Z     "development": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1306370Z       "developmentClient": true,
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1306570Z       "distribution": "internal"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1306740Z     },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1306870Z     "preview": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1307050Z       "distribution": "internal",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1307220Z       "android": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1307370Z         "buildType": "apk"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1307530Z       }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1307640Z     },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1307770Z     "production": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1307910Z       "ios": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1308040Z         "image": "latest"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1308180Z       },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1308310Z       "android": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1308490Z         "buildType": "app-bundle"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1308670Z       }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1308780Z     }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1311690Z   },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1311820Z   "submit": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1311970Z     "production": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1312120Z       "ios": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1312290Z         "ascAppId": "6816409529"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1312460Z       }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1312620Z     }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1312780Z   }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1318370Z }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1318650Z [READ_PACKAGE_JSON] Using package.json:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1318860Z [READ_PACKAGE_JSON] {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1319040Z   "name": "ridgenooks-mobile",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1319230Z   "main": "expo-router/entry",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1319390Z   "version": "1.0.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1319540Z   "dependencies": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1319680Z     "@expo/ui": "~57.0.16",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1319920Z     "@react-native-async-storage/async-storage": "^3.1.1",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1320200Z     "@stripe/stripe-react-native": "0.64.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1320400Z     "expo": "~57.0.20",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1320580Z     "expo-constants": "~57.0.17",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1320760Z     "expo-device": "~57.0.1",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1320920Z     "expo-font": "~57.0.3",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1321150Z     "expo-glass-effect": "~57.0.1",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1321390Z     "expo-image": "~57.0.4",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1321640Z     "expo-image-picker": "^57.0.16",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1321860Z     "expo-linking": "~57.0.9",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1322050Z     "expo-location": "^57.0.16",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1322250Z     "expo-router": "~57.0.19",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1322440Z     "expo-secure-store": "~57.0.3",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1322650Z     "expo-splash-screen": "~57.0.8",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1322860Z     "expo-status-bar": "~57.0.1",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1323060Z     "expo-symbols": "~57.0.2",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1323290Z     "expo-system-ui": "~57.0.3",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1323550Z     "expo-web-browser": "~57.0.2",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1324080Z     "lucide-react-native": "^1.42.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1324270Z     "nativewind": "^4.2.6",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1324440Z     "react": "19.2.3",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1324640Z     "react-dom": "19.2.3",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1324860Z     "react-native": "0.86.3",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1325140Z     "react-native-gesture-handler": "~2.32.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1325460Z     "react-native-maps": "^1.29.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1325780Z     "react-native-paystack-webview": "^5.1.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1326110Z     "react-native-reanimated": "^4.5.1",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1326400Z     "react-native-safe-area-context": "~5.7.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1326820Z     "react-native-screens": "~4.26.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1327110Z     "react-native-web": "~0.21.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1327380Z     "react-native-webview": "^14.0.1",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1327630Z     "tailwindcss": "^3.4.19"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1327830Z   },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1327950Z   "devDependencies": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1328130Z     "@types/react": "~19.2.2",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1328320Z     "patch-package": "^8.0.1",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1328580Z     "postinstall-postinstall": "^2.1.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1328840Z     "sharp": "^0.35.4",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1329000Z     "typescript": "~6.0.3"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1329310Z   },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1329470Z   "scripts": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1329620Z     "start": "expo start",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1329860Z     "reset-project": "node ./scripts/reset-project.js",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1330130Z     "android": "expo start --android",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1330380Z     "ios": "expo start --ios",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1330630Z     "web": "expo start --web",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1330820Z     "lint": "expo lint",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1331020Z     "postinstall": "patch-package"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1331240Z   },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1331410Z   "private": true
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1331540Z }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:27.1332260Z [INSTALL_DEPENDENCIES] Running "npm ci --include=dev" in /var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build directory
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:30.8627310Z [INSTALL_DEPENDENCIES] npm warn deprecated uuid@7.0.3: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.6069110Z [INSTALL_DEPENDENCIES] > ridgenooks-mobile@1.0.0 postinstall
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.6071110Z [INSTALL_DEPENDENCIES] > patch-package
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7135450Z [INSTALL_DEPENDENCIES] patch-package 8.0.1
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7236630Z [INSTALL_DEPENDENCIES] Applying patches...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7337210Z [INSTALL_DEPENDENCIES] expo-modules-jsi@57.0.8 ✔
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7438210Z [INSTALL_DEPENDENCIES] added 719 packages, and audited 720 packages in 12s
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7538650Z [INSTALL_DEPENDENCIES] 79 packages are looking for funding
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7646320Z [INSTALL_DEPENDENCIES]   run `npm fund` for details
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7846550Z [INSTALL_DEPENDENCIES] 14 moderate severity vulnerabilities
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7851840Z [INSTALL_DEPENDENCIES] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7853480Z [INSTALL_DEPENDENCIES] To address issues that do not require attention, run:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7853980Z [INSTALL_DEPENDENCIES]   npm audit fix
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7854210Z [INSTALL_DEPENDENCIES] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7854630Z [INSTALL_DEPENDENCIES] To address all issues (including breaking changes), run:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7855280Z [INSTALL_DEPENDENCIES]   npm audit fix --force
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7855580Z [INSTALL_DEPENDENCIES] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.7855830Z [INSTALL_DEPENDENCIES] Run `npm audit` for details.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.8039420Z The NODE_ENV environment variable is required but was not specified. Ensure the project is bundled with Expo CLI or NODE_ENV is set.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:38.8040050Z Proceeding without mode-specific .env
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1107240Z [READ_APP_CONFIG] Using app configuration:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1107910Z [READ_APP_CONFIG] {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1111140Z   "name": "Ridgenooks",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1111310Z   "slug": "ridgenooks",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1111490Z   "version": "1.0.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1111770Z   "orientation": "portrait",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1112010Z   "icon": "./assets/icon-ios.png",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1112270Z   "scheme": "ridgenooksmobile",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1112540Z   "userInterfaceStyle": "automatic",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1112730Z   "ios": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1112920Z     "bundleIdentifier": "com.ridgenooks.app",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1113130Z     "buildNumber": "4",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1113290Z     "supportsTablet": true,
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1113450Z     "infoPlist": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1113650Z       "ITSAppUsesNonExemptEncryption": false
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1113840Z     }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1113960Z   },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1114080Z   "android": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1114220Z     "adaptiveIcon": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1114410Z       "backgroundColor": "#0F172A",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1114660Z       "foregroundImage": "./assets/logo_transparent.png"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1114890Z     },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1115060Z     "predictiveBackGestureEnabled": false,
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1115300Z     "package": "com.ridgenooks.app",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1115480Z     "versionCode": 4,
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1115680Z     "softwareKeyboardLayoutMode": "resize"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1115870Z   },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1115990Z   "web": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1116110Z     "output": "static",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1116320Z     "favicon": "./assets/images/favicon.png"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1116500Z   },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1116620Z   "plugins": [
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1116750Z     "expo-router",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1116910Z     [
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1117070Z       "expo-splash-screen",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1117280Z       {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1117460Z         "backgroundColor": "#0F172A",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1117710Z         "image": "./assets/logo_transparent.png",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1118000Z         "imageWidth": 200
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1118190Z       }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1118300Z     ],
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1118420Z     [
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1118580Z       "@stripe/stripe-react-native",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1121790Z       {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1122040Z         "merchantIdentifier": "merchant.com.ridgenooks.app",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1122340Z         "enableGooglePay": false
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1122560Z       }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1122710Z     ],
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1122870Z     "expo-secure-store",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1123180Z     "./withDisableStrictConcurrency.js"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1123420Z   ],
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1123580Z   "experiments": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1123780Z     "typedRoutes": true,
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1124060Z     "reactCompiler": true
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1124260Z   },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1124420Z   "extra": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1124600Z     "router": {},
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1124750Z     "eas": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1125080Z       "projectId": "6422332d-c9a9-4fbd-8e6a-a119d7c0e49f"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1125370Z     }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1125530Z   },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1125680Z   "splash": {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1132200Z     "image": "./assets/logo_transparent.png",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1132680Z     "resizeMode": "contain",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1132920Z     "backgroundColor": "#0F172A"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1133120Z   },
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1133260Z   "sdkVersion": "57.0.0",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1133420Z   "platforms": [
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1133560Z     "ios",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1133680Z     "android",
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1133810Z     "web"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1133930Z   ]
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1134050Z }
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:39.1134300Z [RUN_EXPO_DOCTOR] Running "expo doctor"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:40.5836660Z [RUN_EXPO_DOCTOR] Running 21 checks on your project...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3218010Z [RUN_EXPO_DOCTOR] 18/21 checks passed. 3 checks failed. Possible issues detected:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3234500Z [RUN_EXPO_DOCTOR] Use the --verbose flag to see more details about passed checks.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3234970Z [RUN_EXPO_DOCTOR] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3235580Z [RUN_EXPO_DOCTOR] ✖ Check Expo config (app.json/ app.config.js) schema
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3237170Z [RUN_EXPO_DOCTOR] Error validating fields in /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/app.json:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3238100Z [RUN_EXPO_DOCTOR]  should NOT have additional property 'splash'.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3238380Z [RUN_EXPO_DOCTOR] Advice:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3238990Z [RUN_EXPO_DOCTOR] Resolve schema errors in your app config. Learn more: https://docs.expo.dev/workflow/configuration/
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3239470Z [RUN_EXPO_DOCTOR] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3239930Z [RUN_EXPO_DOCTOR] ✖ Check that required peer dependencies are installed
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3240440Z [RUN_EXPO_DOCTOR] Missing peer dependency: react-native-svg
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3240900Z [RUN_EXPO_DOCTOR] Required by: lucide-react-native
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3241380Z [RUN_EXPO_DOCTOR] Missing peer dependency: react-native-worklets
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3241860Z [RUN_EXPO_DOCTOR] Required by: react-native-reanimated
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3242150Z [RUN_EXPO_DOCTOR] Advice:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3242820Z [RUN_EXPO_DOCTOR] Install missing required peer dependencies with "npx expo install react-native-svg react-native-worklets"
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3243670Z [RUN_EXPO_DOCTOR] Your app may crash outside of Expo Go without these dependencies. Native module peer dependencies must be installed directly.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3244130Z [RUN_EXPO_DOCTOR] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3244530Z [RUN_EXPO_DOCTOR] ✖ Check that packages match versions required by installed Expo SDK
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3244860Z [RUN_EXPO_DOCTOR] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3245210Z [RUN_EXPO_DOCTOR] ❗ Major version mismatches
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3245610Z [RUN_EXPO_DOCTOR] package                                    expected  found    
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3246140Z [RUN_EXPO_DOCTOR] @react-native-async-storage/async-storage  2.2.0     3.1.1    
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3246690Z [RUN_EXPO_DOCTOR] react-native-webview                       13.16.1   14.0.1   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3246990Z [RUN_EXPO_DOCTOR] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3247260Z [RUN_EXPO_DOCTOR] ⚠️ Minor version mismatches
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3248310Z [RUN_EXPO_DOCTOR] package                                    expected  found    
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3248750Z [RUN_EXPO_DOCTOR] react-native-maps                          1.27.2    1.29.0   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3249030Z [RUN_EXPO_DOCTOR] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3249300Z [RUN_EXPO_DOCTOR] 🔧 Patch version mismatches
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3249720Z [RUN_EXPO_DOCTOR] package                                    expected  found    
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3250220Z [RUN_EXPO_DOCTOR] @expo/ui                                   ~57.0.20  57.0.16  
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3250640Z [RUN_EXPO_DOCTOR] expo                                       ~57.0.25  57.0.20  
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3251070Z [RUN_EXPO_DOCTOR] expo-constants                             ~57.0.19  57.0.17  
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3251510Z [RUN_EXPO_DOCTOR] expo-device                                ~57.0.2   57.0.1   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3251940Z [RUN_EXPO_DOCTOR] expo-font                                  ~57.0.4   57.0.3   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3252380Z [RUN_EXPO_DOCTOR] expo-glass-effect                          ~57.0.4   57.0.1   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3252830Z [RUN_EXPO_DOCTOR] expo-image                                 ~57.0.5   57.0.4   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3253270Z [RUN_EXPO_DOCTOR] expo-image-picker                          ~57.0.20  57.0.16  
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3253890Z [RUN_EXPO_DOCTOR] expo-linking                               ~57.0.11  57.0.9   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3254390Z [RUN_EXPO_DOCTOR] 3 checks failed, indicating possible issues with the project.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3254850Z [RUN_EXPO_DOCTOR] expo-location                              ~57.0.20  57.0.16  
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3255280Z [RUN_EXPO_DOCTOR] expo-router                                ~57.0.23  57.0.19  
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3255720Z [RUN_EXPO_DOCTOR] expo-splash-screen                         ~57.0.9   57.0.8   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3256380Z [RUN_EXPO_DOCTOR] expo-symbols                               ~57.0.3   57.0.2   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3256820Z [RUN_EXPO_DOCTOR] expo-system-ui                             ~57.0.4   57.0.3   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3257280Z [RUN_EXPO_DOCTOR] expo-web-browser                           ~57.0.3   57.0.2   
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3257550Z [RUN_EXPO_DOCTOR] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3257720Z [RUN_EXPO_DOCTOR] Changelogs:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3258330Z [RUN_EXPO_DOCTOR] - expo-constants → https://github.com/expo/expo/blob/sdk-57/packages/expo-constants/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3259060Z [RUN_EXPO_DOCTOR] - expo-device → https://github.com/expo/expo/blob/sdk-57/packages/expo-device/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3259750Z [RUN_EXPO_DOCTOR] - expo-font → https://github.com/expo/expo/blob/sdk-57/packages/expo-font/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3260480Z [RUN_EXPO_DOCTOR] - expo-glass-effect → https://github.com/expo/expo/blob/sdk-57/packages/expo-glass-effect/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3261220Z [RUN_EXPO_DOCTOR] - expo-image → https://github.com/expo/expo/blob/sdk-57/packages/expo-image/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3261970Z [RUN_EXPO_DOCTOR] - expo-image-picker → https://github.com/expo/expo/blob/sdk-57/packages/expo-image-picker/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3262720Z [RUN_EXPO_DOCTOR] - expo-linking → https://github.com/expo/expo/blob/sdk-57/packages/expo-linking/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3263560Z [RUN_EXPO_DOCTOR] - expo-location → https://github.com/expo/expo/blob/sdk-57/packages/expo-location/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3264270Z [RUN_EXPO_DOCTOR] - expo-router → https://github.com/expo/expo/blob/sdk-57/packages/expo-router/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3276590Z [RUN_EXPO_DOCTOR] - expo-splash-screen → https://github.com/expo/expo/blob/sdk-57/packages/expo-splash-screen/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3277480Z [RUN_EXPO_DOCTOR] - expo-symbols → https://github.com/expo/expo/blob/sdk-57/packages/expo-symbols/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3278590Z [RUN_EXPO_DOCTOR] - expo-system-ui → https://github.com/expo/expo/blob/sdk-57/packages/expo-system-ui/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3279570Z [RUN_EXPO_DOCTOR] - expo-web-browser → https://github.com/expo/expo/blob/sdk-57/packages/expo-web-browser/CHANGELOG.md
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3280340Z [RUN_EXPO_DOCTOR] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3280550Z [RUN_EXPO_DOCTOR] 18 packages out of date.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3280770Z [RUN_EXPO_DOCTOR] Advice:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3281150Z [RUN_EXPO_DOCTOR] Use 'npx expo install --check' to review and upgrade your dependencies.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3281920Z [RUN_EXPO_DOCTOR] To ignore specific packages, add them to "expo.install.exclude" in package.json. Learn more: https://expo.fyi/dependency-validation
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3395330Z [RUN_EXPO_DOCTOR] Command "expo doctor" failed.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3395810Z Error: npx -y expo-doctor exited with non-zero code: 1
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3396920Z     at ChildProcess.completionListener (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/spawn-async/build/spawnAsync.js:113:23)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3397510Z     at Object.onceWrapper (node:events:639:26)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3397770Z     at ChildProcess.emit (node:events:524:28)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3398040Z     at ChildProcess.emit (node:domain:489:12)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3398320Z     at maybeClose (node:internal/child_process:1104:16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3398710Z     at Socket.<anonymous> (node:internal/child_process:456:11)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3399040Z     at Socket.emit (node:events:524:28)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3399270Z     at Socket.emit (node:domain:489:12)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3399490Z     at Pipe.<anonymous> (node:net:343:12)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3399680Z     ...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3400070Z     at spawnAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/spawn-async/build/spawnAsync.js:9:23)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3400660Z     at spawn (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/turtle-spawn/dist/index.js:16:47)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3401290Z     at runExpoDoctor (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/common/setup.js:158:52)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3402250Z     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3402800Z     at async /Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/common/setup.js:137:17
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3403710Z     at async BuildContext.runBuildPhase (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/context.js:128:28)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3404490Z     at async setupAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/common/setup.js:135:9)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3405460Z     at async buildInnerAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/ios.js:66:5)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3406140Z     at async buildAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/ios.js:56:9)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3406850Z     at async runBuilderWithHooksAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/common.js:13:13)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3407390Z [PREPARE_CREDENTIALS] Preparing credentials
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:43.3407670Z [PREPARE_CREDENTIALS] Creating keychain
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:44.4413960Z [PREPARE_CREDENTIALS] Preparing credentials for target 'Ridgenooks'
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:44.4414540Z [PREPARE_CREDENTIALS] Getting distribution certificate fingerprint and common name
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:44.4790950Z [PREPARE_CREDENTIALS] Fingerprint = "C1B4411CCF53C90D1C1C2CD552E36C662BB991D1", common name = iPhone Distribution: AbdulQuayyum Oyedotun (2R4679C9P5)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:44.4793430Z [PREPARE_CREDENTIALS] Writing distribution certificate to /var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/b135b74e-f331-4542-b9d8-a56377151c1f.p12
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:44.4798920Z [PREPARE_CREDENTIALS] Importing distribution certificate into the keychain
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:45.5273150Z [PREPARE_CREDENTIALS] Initializing provisioning profile
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:45.5749470Z [PREPARE_CREDENTIALS] Validating whether the distribution certificate has been imported successfully
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:45.6044490Z [PREPARE_CREDENTIALS] Verifying whether the distribution certificate and provisioning profile match
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:46.1249360Z [PREBUILD] - Creating native directory (./ios)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:46.3738980Z [PREBUILD] ✔ Created native directory
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:46.3740820Z [PREBUILD] - Updating package.json
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:46.3791100Z [PREBUILD] ✔ Updated package.json
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:46.3791500Z [PREBUILD] - Running prebuild
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:47.1731520Z [PREBUILD] ✔ Finished prebuild
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:47.1878850Z [PREBUILD] Running "npm install --include=dev" in /var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build directory
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.3571720Z [PREBUILD] > ridgenooks-mobile@1.0.0 postinstall
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.3572130Z [PREBUILD] > patch-package
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.4636330Z [PREBUILD] patch-package 8.0.1
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.4736560Z [PREBUILD] Applying patches...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.4837900Z [PREBUILD] expo-modules-jsi@57.0.8 ✔
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.4938040Z [PREBUILD] up to date, audited 720 packages in 1s
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5038410Z [PREBUILD] 79 packages are looking for funding
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5139360Z [PREBUILD]   run `npm fund` for details
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5240610Z [PREBUILD] 14 moderate severity vulnerabilities
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5340170Z [PREBUILD] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5441730Z [PREBUILD] To address issues that do not require attention, run:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5542030Z [PREBUILD]   npm audit fix
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5552230Z [PREBUILD] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5559570Z [PREBUILD] To address all issues (including breaking changes), run:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5559980Z [PREBUILD]   npm audit fix --force
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5560160Z [PREBUILD] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5560370Z [PREBUILD] Run `npm audit` for details.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:48.5566530Z [RESTORE_CACHE] Local builds do not support restoring cache
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2356450Z [INSTALL_PODS] Using Expo modules
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2357260Z [INSTALL_PODS] [Expo] Enabling modular headers for pod ExpoModulesCore
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2357970Z [INSTALL_PODS] [Expo] Enabling modular headers for pod ExpoModulesWorklets
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2358590Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-RCTFabric
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2359180Z [INSTALL_PODS] [Expo] Enabling modular headers for pod ExpoModulesJSI
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2359830Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-RCTAppDelegate
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2360520Z [INSTALL_PODS] [Expo] Enabling modular headers for pod ReactAppDependencyProvider
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2361040Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-Core
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2361520Z [INSTALL_PODS] [Expo] Enabling modular headers for pod ReactCodegen
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2362030Z [INSTALL_PODS] [Expo] Enabling modular headers for pod RCTRequired
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2362550Z [INSTALL_PODS] [Expo] Enabling modular headers for pod RCTTypeSafety
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2363080Z [INSTALL_PODS] [Expo] Enabling modular headers for pod ReactCommon
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2363620Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-NativeModulesApple
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2364130Z [INSTALL_PODS] [Expo] Enabling modular headers for pod Yoga
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2364520Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-Fabric
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2364940Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-graphics
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2365370Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-utils
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2365840Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-featureflags
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2366330Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-debug
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2366870Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-ImageManager
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2368100Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-rendererdebug
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2368570Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-jsi
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2368990Z [INSTALL_PODS] [Expo] Enabling modular headers for pod React-renderercss
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2370110Z [INSTALL_PODS] [Expo] Enabling modular headers for pod hermes-engine
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2370490Z [INSTALL_PODS] [Expo] Enabling modular headers for pod glog
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2371210Z [INSTALL_PODS] [Expo] Enabling modular headers for pod boost
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2371620Z [INSTALL_PODS] [Expo] Enabling modular headers for pod DoubleConversion
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2372020Z [INSTALL_PODS] [Expo] Enabling modular headers for pod fast_float
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2372380Z [INSTALL_PODS] [Expo] Enabling modular headers for pod fmt
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2372750Z [INSTALL_PODS] [Expo] Enabling modular headers for pod RCT-Folly
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2373150Z [INSTALL_PODS] [Expo] Enabling modular headers for pod SocketRocket
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2373540Z [INSTALL_PODS] [Expo] Enabling modular headers for pod SDWebImage
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2373980Z [INSTALL_PODS] [Expo] Enabling modular headers for pod SDWebImageAVIFCoder
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2374500Z [INSTALL_PODS] [Expo] Enabling modular headers for pod SDWebImageSVGCoder
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2375130Z [INSTALL_PODS] [Expo] Enabling modular headers for pod SDWebImageWebPCoder
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2375610Z [INSTALL_PODS] [Expo] Enabling modular headers for pod libavif
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2375990Z [INSTALL_PODS] [Expo] Enabling modular headers for pod RNScreens
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2376500Z [INSTALL_PODS] [Expo-precompiled] RNReanimated: building from source (prebuilt tarball not found)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2378080Z [INSTALL_PODS] [Expo-precompiled]   Expected tarball: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/packages/precompile/.build/react-native-reanimated/output/4.5.1/0.86.3/250829098.0.17/debug/xcframeworks/RNReanimated.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2379340Z [INSTALL_PODS] [Expo-precompiled] react-native-safe-area-context: building from source (prebuilt tarball not found)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2381190Z [INSTALL_PODS] [Expo-precompiled]   Expected tarball: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/packages/precompile/.build/react-native-safe-area-context/output/5.7.0/0.86.3/250829098.0.17/debug/xcframeworks/RNCSafeAreaContext.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2382500Z [INSTALL_PODS] [Expo-precompiled] RNScreens: building from source (prebuilt tarball not found)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2383840Z [INSTALL_PODS] [Expo-precompiled]   Expected tarball: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/packages/precompile/.build/react-native-screens/output/4.26.2/0.86.3/250829098.0.17/debug/xcframeworks/RNScreens.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2384930Z [INSTALL_PODS] [Expo-precompiled] RNSVG: building from source (prebuilt tarball not found)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2386240Z [INSTALL_PODS] [Expo-precompiled]   Expected tarball: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/packages/precompile/.build/react-native-svg/output/15.15.5/0.86.3/250829098.0.17/debug/xcframeworks/RNSVG.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2387340Z [INSTALL_PODS] [Expo-precompiled] RNWorklets: building from source (prebuilt tarball not found)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2388710Z [INSTALL_PODS] [Expo-precompiled]   Expected tarball: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/packages/precompile/.build/react-native-worklets/output/0.10.1/0.86.3/250829098.0.17/debug/xcframeworks/RNWorklets.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2390130Z [INSTALL_PODS] [Expo-precompiled] RNCAsyncStorage: building from source (prebuilt tarball not found)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.2391870Z [INSTALL_PODS] [Expo-precompiled]   Expected tarball: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/packages/precompile/.build/@react-native-async-storage/async-storage/output/3.1.1/0.86.3/250829098.0.17/debug/xcframeworks/RNCAsyncStorage.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.8165100Z [INSTALL_PODS] [RNScreens] Gamma project enabled. Including source files.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.9600450Z [INSTALL_PODS] Found 12 modules for target `Ridgenooks`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:50.9625590Z [INSTALL_PODS] link_native_modules! {ios_packages: [{configurations: [], name: "@react-native-async-storage/async-storage", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/@react-native-async-storage/async-storage", path: "../node_modules/@react-native-async-storage/async-storage", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/@react-native-async-storage/async-storage/AsyncStorage.podspec", script_phases: []}, {configurations: [], name: "@react-native-masked-view/masked-view", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/@react-native-masked-view/masked-view", path: "../node_modules/@react-native-masked-view/masked-view", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/@react-native-masked-view/masked-view/RNCMaskedView.podspec", script_phases: []}, {configurations: [], name: "@stripe/stripe-react-native", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/@stripe/stripe-react-native", path: "../node_modules/@stripe/stripe-react-native", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/@stripe/stripe-react-native/stripe-react-native.podspec", script_phases: []}, {configurations: [], name: "expo", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/expo", path: "../node_modules/expo", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/expo/Expo.podspec", script_phases: []}, {configurations: [], name: "react-native-gesture-handler", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-gesture-handler", path: "../node_modules/react-native-gesture-handler", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-gesture-handler/RNGestureHandler.podspec", script_phases: []}, {configurations: [], name: "react-native-maps", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-maps", path: "../node_modules/react-native-maps", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-maps/react-native-maps.podspec", script_phases: []}, {configurations: [], name: "react-native-reanimated", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-reanimated", path: "../node_modules/react-native-reanimated", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-reanimated/RNReanimated.podspec", script_phases: []}, {configurations: [], name: "react-native-safe-area-context", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-safe-area-context", path: "../node_modules/react-native-safe-area-context", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-safe-area-context/react-native-safe-area-context.podspec", script_phases: []}, {configurations: [], name: "react-native-screens", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-screens", path: "../node_modules/react-native-screens", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-screens/RNScreens.podspec", script_phases: []}, {configurations: [], name: "react-native-svg", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-svg", path: "../node_modules/react-native-svg", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-svg/RNSVG.podspec", script_phases: []}, {configurations: [], name: "react-native-webview", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-webview", path: "../node_modules/react-native-webview", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-webview/react-native-webview.podspec", script_phases: []}, {configurations: [], name: "react-native-worklets", root: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-worklets", path: "../node_modules/react-native-worklets", podspec_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/node_modules/react-native-worklets/RNWorklets.podspec", script_phases: []}], ios_project_root_path: "/private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios", react_native_path: "../node_modules/react-native"}
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.1733930Z [INSTALL_PODS] [RNScreens] Gamma project enabled. Including source files.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.3124350Z [INSTALL_PODS] Auto-linking React Native modules for target `Ridgenooks`: AsyncStorage, RNCMaskedView, RNGestureHandler, RNReanimated, RNSVG, RNScreens, RNWorklets, react-native-maps, react-native-safe-area-context, react-native-webview, and stripe-react-native
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.3962540Z [INSTALL_PODS] Framework build type is static library
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.4054810Z [INSTALL_PODS] [ReactNativeDependencies] Setting up ReactNativeDependencies...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.5754510Z [INSTALL_PODS] [ReactNativeDependencies] Building from source: false
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.5755840Z [INSTALL_PODS] [ReactNativeDependencies] Using tarball from URL: https://repo1.maven.org/maven2/com/facebook/react/react-native-artifacts/0.86.3/react-native-artifacts-0.86.3-reactnative-dependencies-debug.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.5824760Z [INSTALL_PODS] [ReactNativeDependencies] Cache miss: downloading reactnative-dependencies-0.86.3-debug.tar.gz from https://repo1.maven.org/maven2/com/facebook/react/react-native-artifacts/0.86.3/react-native-artifacts-0.86.3-reactnative-dependencies-debug.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.5959200Z [INSTALL_PODS] % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.5959980Z [INSTALL_PODS]                                  Dload  Upload   Total   Spent    Left  Speed
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.5960630Z [INSTALL_PODS] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.5960950Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.5961240Z [INSTALL_PODS] --:--     0
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.6254160Z [INSTALL_PODS] 100   167    0   167    0     0   5626      0 --:--:-- --:--:-- --:--:--  5758
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.8151740Z [INSTALL_PODS] 100 17.8M  100 17.8M    0     0  82.4M      0 --:--:-- --:--:-
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.8251970Z [INSTALL_PODS] - --:--:-- 82.4M
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.8253070Z [INSTALL_PODS] [ReactNativeDependencies] Verifying checksum for downloaded reactnative-dependencies-0.86.3-debug.tar.gz...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.9139630Z [INSTALL_PODS] [Cache] SHA1 verified for reactnative-dependencies-0.86.3-debug.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.9262140Z [INSTALL_PODS] [ReactNativeDependencies] Saved reactnative-dependencies-0.86.3-debug.tar.gz to shared cache (/Users/runner/Library/Caches/ReactNative)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.9329230Z [INSTALL_PODS] [ReactNativeDependencies] Cache miss: downloading reactnative-dependencies-0.86.3-release.tar.gz from https://repo1.maven.org/maven2/com/facebook/react/react-native-artifacts/0.86.3/react-native-artifacts-0.86.3-reactnative-dependencies-release.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.9459160Z [INSTALL_PODS] % Total    % Received % Xferd  Average Speed   Time    Time
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.9459670Z [INSTALL_PODS] Time  Current
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.9460160Z [INSTALL_PODS]                                  Dload  Upload   Total   Spent    Left  Speed
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.9460530Z [INSTALL_PODS] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.9460840Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:51.9773990Z [INSTALL_PODS] 100   167    0   167    0     0   5325      0 --:--:-- --:--:-- --:--:--  5387
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.2655130Z [INSTALL_PODS] 34  9.9M   34 3528k
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.2657340Z [INSTALL_PODS] 0     0  10.7M      0 --:--:-- --:--:-- --:--:-- 10.7M
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.3068860Z [INSTALL_PODS] 100  9.9M  100  9.9M    0     0  27.5M      0 --:--:-- --:--:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.3069430Z [INSTALL_PODS] -- --:--:--  158M
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.3115380Z [INSTALL_PODS] [ReactNativeDependencies] Verifying checksum for downloaded reactnative-dependencies-0.86.3-release.tar.gz...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.3976420Z [INSTALL_PODS] [Cache] SHA1 verified for reactnative-dependencies-0.86.3-release.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.4070340Z [INSTALL_PODS] [ReactNativeDependencies] Saved reactnative-dependencies-0.86.3-release.tar.gz to shared cache (/Users/runner/Library/Caches/ReactNative)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.4072610Z [INSTALL_PODS] [ReactNativeDependencies] Source: {http: "https://repo1.maven.org/maven2/com/facebook/react/react-native-artifacts/0.86.3/react-native-artifacts-0.86.3-reactnative-dependencies-debug.tar.gz"}
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.4073740Z [INSTALL_PODS] [ReactNativeCore] Setting up ReactNativeCore...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.5147820Z [INSTALL_PODS] [ReactNativeCore] Building from source: false
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.5247970Z [INSTALL_PODS] Configuring the target with the New Architecture
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.5349460Z [INSTALL_PODS] [ReactNativeCore] Using React Native Core and React Native Dependencies prebuilt versions.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8870680Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Analyzing /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/package.json^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8871960Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for codegen-enabled libraries in the app.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8873070Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mThe "codegenConfig" field is not defined in package.json. Assuming there is nothing to generate at the app level.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8874160Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for codegen-enabled libraries in react-native.config.js^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8874930Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Found @react-native-async-storage/async-storage^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8875570Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Found @stripe/stripe-react-native^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8876180Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Found react-native-gesture-handler^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8876760Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Found react-native-maps^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8877910Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Found react-native-reanimated^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8878490Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Found react-native-safe-area-context^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8878990Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Found react-native-screens^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8879500Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Found react-native-svg^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8880020Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Found react-native-webview^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8880550Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Found react-native-worklets^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8881050Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Processing AsyncStorageSpec^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8881740Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for podspec in the project dependencies.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8882630Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Supported Apple platforms: ios, macos, visionos for AsyncStorageSpec^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8883170Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Processing rnstripe^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8883710Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for podspec in the project dependencies.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8884280Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Supported Apple platforms: ios for rnstripe^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8884800Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Processing rngesturehandler_codegen^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8885470Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for podspec in the project dependencies.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8886330Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Supported Apple platforms: ios, macos, tvos, visionos for rngesturehandler_codegen^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8886910Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Processing RNMapsSpecs^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8887560Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for podspec in the project dependencies.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8888140Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Supported Apple platforms: ios for RNMapsSpecs^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8888990Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Processing rnreanimated^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8889650Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for podspec in the project dependencies.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8890300Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Supported Apple platforms: ios, macos, tvos, visionos for rnreanimated^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8890940Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Processing safeareacontext^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8891630Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for podspec in the project dependencies.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8892500Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Supported Apple platforms: ios, macos, tvos, visionos for safeareacontext^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8893050Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Processing rnscreens^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8893570Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for podspec in the project dependencies.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8894220Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Supported Apple platforms: ios, tvos, visionos for rnscreens^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8894700Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Processing rnsvg^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8895220Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for podspec in the project dependencies.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8895870Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Supported Apple platforms: ios, macos, tvos, visionos for rnsvg^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8896610Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Processing RNCWebViewSpec^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8897160Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for podspec in the project dependencies.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8897810Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Supported Apple platforms: ios, macos, visionos for RNCWebViewSpec^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8898340Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Processing rnworklets^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8898880Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mSearching for podspec in the project dependencies.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8899550Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Supported Apple platforms: ios, macos, tvos, visionos for rnworklets^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8900390Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating Native Code for AsyncStorageSpec - ios^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8901560Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifacts: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8907440Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating Native Code for rnstripe - ios^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8908610Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifacts: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8909760Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating Native Code for rngesturehandler_codegen - ios^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8911150Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifacts: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8912070Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating Native Code for rnreanimated - ios^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8913350Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifacts: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8914280Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating Native Code for safeareacontext - ios^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8915520Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifacts: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8916850Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating Native Code for rnscreens - ios^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8917960Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifacts: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8918830Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating Native Code for rnsvg - ios^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8919910Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifacts: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8920950Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating Native Code for RNCWebViewSpec - ios^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8922470Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifacts: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8923560Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating Native Code for rnworklets - ios^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8924660Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifacts: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8925550Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating RCTThirdPartyComponentsProvider.h^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8927030Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifact: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen/RCTThirdPartyComponentsProvider.h^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8928070Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating RCTThirdPartyComponentsProvider.mm^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8929600Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifact: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen/RCTThirdPartyComponentsProvider.mm^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8930700Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating RCTModulesProvider.h^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8932100Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifact: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen/RCTModuleProviders.h^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8933240Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating RCTModuleProviders.mm^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8934620Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifact: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen/RCTModuleProviders.mm^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8935550Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating RCTAppDependencyProvider^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8936820Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifact: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactAppDependencyProvider/RCTAppDependencyProvider.h^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8938740Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated artifact: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactAppDependencyProvider/RCTAppDependencyProvider.mm^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8940530Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated podspec: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactAppDependencyProvider/ReactAppDependencyProvider.podspec^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8942220Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generated podspec: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/ReactCodegen/ReactCodegen.podspec^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8943200Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m Generating Package.swift^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8943490Z [INSTALL_PODS] ^[[36m^[[1m[Cod
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8944720Z [INSTALL_PODS] egen]^[[0m Generated artifact: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/build/generated/ios/Package.swift^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.8945570Z [INSTALL_PODS] ^[[36m^[[1m[Codegen]^[[0m ^[[33mDone.^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9166950Z [INSTALL_PODS] Analyzing dependencies
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9201300Z [INSTALL_PODS] [Expo-precompiled] Bundled SPM frameworks: SDWebImage, SDWebImageAVIFCoder, SDWebImageSVGCoder, SDWebImageWebPCoder, libavif
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9638050Z [INSTALL_PODS] Fetching podspec for `ExpoFileSystem` from `../node_modules/expo-file-system/ios/ExpoFileSystem.podspec`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9666120Z [INSTALL_PODS] Fetching podspec for `ExpoFont` from `../node_modules/expo-font/ios/ExpoFont.podspec`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9690700Z [INSTALL_PODS] Fetching podspec for `ExpoImage` from `../node_modules/expo-image/ios/ExpoImage.podspec`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9711570Z [INSTALL_PODS] [Expo-precompiled] Stripping bundled dependency 'SDWebImage' from ExpoImage
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9712350Z [INSTALL_PODS] [Expo-precompiled] Stripping bundled dependency 'SDWebImageAVIFCoder' from ExpoImage
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9712990Z [INSTALL_PODS] [Expo-precompiled] Stripping bundled dependency 'SDWebImageSVGCoder' from ExpoImage
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9713720Z [INSTALL_PODS] [Expo-precompiled] Stripping bundled dependency 'SDWebImageWebPCoder' from ExpoImage
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9714460Z [INSTALL_PODS] [Expo-precompiled] Stripping bundled dependency 'libavif/libdav1d' from ExpoImage
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9743790Z [INSTALL_PODS] Fetching podspec for `ExpoLocation` from `../node_modules/expo-location/ios/ExpoLocation.podspec`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:52.9767640Z [INSTALL_PODS] Fetching podspec for `ExpoModulesCore` from `../node_modules/expo-modules-core/ExpoModulesCore.podspec`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:53.0163290Z [INSTALL_PODS] Fetching podspec for `ExpoModulesWorklets` from `../node_modules/expo-modules-core/ExpoModulesWorklets.podspec`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:53.2451420Z [INSTALL_PODS] [RNScreens] Gamma project enabled. Including source files.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:53.3450310Z [INSTALL_PODS] Fetching podspec for `React-Core-prebuilt` from `../node_modules/react-native/React-Core-prebuilt.podspec`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:53.3519530Z [INSTALL_PODS] [ReactNativeCore] Cache miss: downloading reactnative-core-0.86.3-debug.tar.gz from https://repo1.maven.org/maven2/com/facebook/react/react-native-artifacts/0.86.3/react-native-artifacts-0.86.3-reactnative-core-debug.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:53.3656050Z [INSTALL_PODS] % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:53.3657220Z [INSTALL_PODS]                                  Dload  Up
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:53.3658040Z [INSTALL_PODS] load   Total   Spent    Left  Speed
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:53.3658580Z [INSTALL_PODS] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:53.3659150Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:53.4046540Z [INSTALL_PODS] 100   167    0   167    0     0   4250      0 --:--:-- --:--:-- --:--:--  4282
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.2647070Z [INSTALL_PODS] 88 94.2M   88 82.9M    0     0  92.1M      0  0:00:01 --:--:--  0:00:01 92.1M
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.3331660Z [INSTALL_PODS] 100 94.2M  100 94.2M    0     0  97.3M      0 --:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.3333910Z [INSTALL_PODS] --:-- --:--:-- --:--:--  166M
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.3405120Z [INSTALL_PODS] [ReactNativeCore] Verifying checksum for downloaded reactnative-core-0.86.3-debug.tar.gz...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.4755260Z [INSTALL_PODS] [Cache] SHA1 verified for reactnative-core-0.86.3-debug.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.5128790Z [INSTALL_PODS] [ReactNativeCore] Saved reactnative-core-0.86.3-debug.tar.gz to shared cache (/Users/runner/Library/Caches/ReactNative)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.5236070Z [INSTALL_PODS] [ReactNativeCore] Cache miss: downloading reactnative-core-0.86.3-release.tar.gz from https://repo1.maven.org/maven2/com/facebook/react/react-native-artifacts/0.86.3/react-native-artifacts-0.86.3-reactnative-core-release.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.5370550Z [INSTALL_PODS] % Total    % Received % Xferd  Average Speed   Time    Time     T
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.5371310Z [INSTALL_PODS] ime  Current
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.5372240Z [INSTALL_PODS]                                  Dload  Upload   Total   Spent    Left  Speed
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.5372580Z [INSTALL_PODS] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.5372830Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.5739290Z [INSTALL_PODS] 100   167    0   167    0     0   4523      0 --:--:-- --:--:-- --:--:--  4638
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.8316460Z [INSTALL_PODS] 100 29.5M  100 29.5M    0     0   100M      0 --:--:-- --:--:-- --:--:--  100M
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.8385330Z [INSTALL_PODS] [ReactNativeCore] Verifying checksum for downloaded reactnative-core-0.86.3-release.tar.gz...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.9275630Z [INSTALL_PODS] [Cache] SHA1 verified for reactnative-core-0.86.3-release.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.9428300Z [INSTALL_PODS] [ReactNativeCore] Saved reactnative-core-0.86.3-release.tar.gz to shared cache (/Users/runner/Library/Caches/ReactNative)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.9528340Z [INSTALL_PODS] [ReactNativeCore] Resolved stable ReactNativeCore-prebuilt version:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.9630340Z [INSTALL_PODS] [ReactNativeCore]   ../../ios/Pods/ReactNativeCore-artifacts/reactnative-core-0.86.3-debug.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:54.9698580Z [INSTALL_PODS] [ReactNativeCore]   ../../ios/Pods/ReactNativeCore-artifacts/reactnative-core-0.86.3-release.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.0126410Z [INSTALL_PODS] Fetching podspec for `ReactNativeDependencies` from `../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.0643170Z [INSTALL_PODS] [ReactNativeDependencies] Using tarball from URL: https://repo1.maven.org/maven2/com/facebook/react/react-native-artifacts/0.86.3/react-native-artifacts-0.86.3-reactnative-dependencies-debug.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.0645170Z [INSTALL_PODS] [ReactNativeDependencies] Tarball reactnative-dependencies-0.86.3-debug.tar.gz already exists in Pods. Skipping download.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.0646320Z [INSTALL_PODS] [ReactNativeDependencies] Tarball reactnative-dependencies-0.86.3-release.tar.gz already exists in Pods. Skipping download.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.0678040Z [INSTALL_PODS] Fetching podspec for `hermes-engine` from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.3261740Z [INSTALL_PODS] [Hermes] Using release tarball from URL: https://repo1.maven.org/maven2/com/facebook/hermes/hermes-ios/250829098.0.17/hermes-ios-250829098.0.17-hermes-ios-debug.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.3416390Z [INSTALL_PODS] [Hermes] Cache miss: downloading hermes-ios-250829098.0.17-debug.tar.gz from https://repo1.maven.org/maven2/com/facebook/hermes/hermes-ios/250829098.0.17/hermes-ios-250829098.0.17-hermes-ios-debug.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.3594920Z [INSTALL_PODS] % Total    % Received % Xferd  Average Speed   Time    Time     Time  C
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.3638080Z [INSTALL_PODS] urrent
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.3670840Z [INSTALL_PODS]                                  Dload  Upload   Total   Spent    Left  Speed
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.3712790Z [INSTALL_PODS] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.3727010Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.3989590Z [INSTALL_PODS] 100   167    0   167    0     0   4107      0 --:--:-- --:--:-- --:-
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.3990290Z [INSTALL_PODS] -:--  4175
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.8260090Z [INSTALL_PODS] 100 31.2M  100 31.2M    0     0  66.7M      0 --:--:-- --:--:-- --:--:-- 66.7M
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.8360580Z [INSTALL_PODS] [Hermes] Verifying checksum for downloaded hermes-ios-250829098.0.17-debug.tar.gz...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.9436560Z [INSTALL_PODS] [Hermes] SHA1 verified for hermes-ios-250829098.0.17-debug.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.9689740Z [INSTALL_PODS] [Hermes] Saved hermes-ios-250829098.0.17-debug.tar.gz to shared cache (/Users/runner/Library/Caches/ReactNative)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:55.9790370Z [INSTALL_PODS] [Hermes] Cache miss: downloading hermes-ios-250829098.0.17-release.tar.gz from https://repo1.maven.org/maven2/com/facebook/hermes/hermes-ios/250829098.0.17/hermes-ios-250829098.0.17-hermes-ios-release.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:56.0005280Z [INSTALL_PODS] % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:56.0011180Z [INSTALL_PODS] Dload  Upload   Total   Spent    Left  Speed
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:56.0011630Z [INSTALL_PODS] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:56.0012020Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:56.0433350Z [INSTALL_PODS] 100   167    0   167    0     0   3809      0 --:--:-- --:--:-- --:--:--  3883
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:56.2646120Z [INSTALL_PODS] 36 24.3M   36 9026k    0     0  33.2M      0 --:--:-- --:--:-- --:--:-- 33.2M
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:56.3499470Z [INSTALL_PODS] 100 24.3M  100 24.3M    0     0  69.4M      0 --:--:-- --:--:-- --:--:--  182M
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:56.3599660Z [INSTALL_PODS] [Hermes] Verifying checksum for downloaded hermes-ios-250829098.0.17-release.tar.gz...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:56.4581780Z [INSTALL_PODS] [Hermes] SHA1 verified for hermes-ios-250829098.0.17-release.tar.gz
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:08:56.4744920Z [INSTALL_PODS] [Hermes] Saved hermes-ios-250829098.0.17-release.tar.gz to shared cache (/Users/runner/Library/Caches/ReactNative)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:01.4375750Z [INSTALL_PODS] Adding spec repo `trunk` with CDN `https://cdn.cocoapods.org/`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:01.4376770Z [INSTALL_PODS] Downloading dependencies
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:01.4377450Z [INSTALL_PODS] Installing AsyncStorage (3.1.1)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:01.4378200Z [INSTALL_PODS] Installing EXConstants (57.0.17)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:01.4378890Z [INSTALL_PODS] Installing Expo (57.0.20)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:01.4379610Z [INSTALL_PODS] Installing ExpoAsset (57.0.16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:01.4380320Z [INSTALL_PODS] Installing ExpoDevice (57.0.1)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:01.4382080Z [INSTALL_PODS] Installing ExpoDomWebView (57.0.1)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:01.4382910Z [INSTALL_PODS] Installing ExpoFileSystem (57.0.6)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:02.0415310Z [INSTALL_PODS] Installing ExpoFont (57.0.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:02.3801560Z [INSTALL_PODS] Installing ExpoGlassEffect (57.0.1)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:02.3802620Z [INSTALL_PODS] Installing ExpoImage (57.0.4)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:02.9240260Z [INSTALL_PODS] Installing ExpoImagePicker (57.0.16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:02.9240710Z [INSTALL_PODS] Installing ExpoKeepAwake (57.0.1)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:02.9241100Z [INSTALL_PODS] Installing ExpoLinking (57.0.9)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:02.9241470Z [INSTALL_PODS] Installing ExpoLocation (57.0.16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:03.1737690Z [INSTALL_PODS] Installing ExpoLogBox (57.0.4)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:03.1738250Z [INSTALL_PODS] Installing ExpoModulesCore (57.0.16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.2551550Z [INSTALL_PODS] Installing ExpoModulesJSI (57.0.8)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.5014370Z [INSTALL_PODS] Installing ExpoModulesWorklets (57.0.16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9070400Z [INSTALL_PODS] Installing ExpoModulesWorkletsAdapter (57.0.16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9140650Z [INSTALL_PODS] Installing ExpoRouter (57.0.19)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9148230Z [INSTALL_PODS] Installing ExpoSecureStore (57.0.4)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9149220Z [INSTALL_PODS] Installing ExpoSplashScreen (57.0.8)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9151060Z [INSTALL_PODS] Installing ExpoSymbols (57.0.2)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9151500Z [INSTALL_PODS] Installing ExpoSystemUI (57.0.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9151880Z [INSTALL_PODS] Installing ExpoUI (57.0.16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9156630Z [INSTALL_PODS] Installing ExpoWebBrowser (57.0.2)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9157080Z [INSTALL_PODS] Installing FBLazyVector (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9157490Z [INSTALL_PODS] Installing RCTDeprecation (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9157800Z [INSTALL_PODS] Installing RCTRequired (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9158350Z [INSTALL_PODS] Installing RCTSwiftUI (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9158670Z [INSTALL_PODS] Installing RCTSwiftUIWrapper (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9159000Z [INSTALL_PODS] Installing RCTTypeSafety (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9159310Z [INSTALL_PODS] Installing RNCMaskedView (0.3.2)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9159630Z [INSTALL_PODS] Installing RNGestureHandler (2.32.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9159940Z [INSTALL_PODS] Installing RNReanimated (4.5.1)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9160220Z [INSTALL_PODS] Installing RNSVG (15.15.5)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9160500Z [INSTALL_PODS] Installing RNScreens (4.26.2)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9160780Z [INSTALL_PODS] Installing RNWorklets (0.10.1)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9161060Z [INSTALL_PODS] Installing React (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9161330Z [INSTALL_PODS] Installing React-Core (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:04.9161680Z [INSTALL_PODS] Installing React-Core-prebuilt (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4526400Z [INSTALL_PODS] Installing React-CoreModules (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4527340Z [INSTALL_PODS] Installing React-Fabric (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4528240Z [INSTALL_PODS] Installing React-FabricComponents (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4529110Z [INSTALL_PODS] Installing React-FabricImage (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4529900Z [INSTALL_PODS] Installing React-ImageManager (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4530650Z [INSTALL_PODS] Installing React-Mapbuffer (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4531470Z [INSTALL_PODS] Installing React-NativeModulesApple (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4532310Z [INSTALL_PODS] Installing React-RCTActionSheet (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4533100Z [INSTALL_PODS] Installing React-RCTAnimation (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4533890Z [INSTALL_PODS] Installing React-RCTAppDelegate (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4534970Z [INSTALL_PODS] Installing React-RCTBlob (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4535600Z [INSTALL_PODS] Installing React-RCTFBReactNativeSpec (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4536070Z [INSTALL_PODS] Installing React-RCTFabric (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4536500Z [INSTALL_PODS] Installing React-RCTImage (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4536940Z [INSTALL_PODS] Installing React-RCTLinking (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4537420Z [INSTALL_PODS] Installing React-RCTNetwork (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4538670Z [INSTALL_PODS] Installing React-RCTRuntime (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4539140Z [INSTALL_PODS] Installing React-RCTSettings (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4539460Z [INSTALL_PODS] Installing React-RCTText (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4539900Z [INSTALL_PODS] Installing React-RCTVibration (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4540350Z [INSTALL_PODS] Installing React-RuntimeApple (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4540710Z [INSTALL_PODS] Installing React-RuntimeCore (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4541040Z [INSTALL_PODS] Installing React-RuntimeHermes (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4541380Z [INSTALL_PODS] Installing React-callinvoker (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4541690Z [INSTALL_PODS] Installing React-cxxreact (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4541980Z [INSTALL_PODS] Installing React-debug (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4542410Z [INSTALL_PODS] Installing React-defaultsnativemodule (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4542840Z [INSTALL_PODS] Installing React-domnativemodule (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4543230Z [INSTALL_PODS] Installing React-featureflags (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4543680Z [INSTALL_PODS] Installing React-featureflagsnativemodule (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4544080Z [INSTALL_PODS] Installing React-graphics (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4544470Z [INSTALL_PODS] Installing React-hermes (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4544840Z [INSTALL_PODS] Installing React-idlecallbacksnativemodule (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4545350Z [INSTALL_PODS] Installing React-intersectionobservernativemodule (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4545820Z [INSTALL_PODS] Installing React-jserrorhandler (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4546130Z [INSTALL_PODS] Installing React-jsi (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4546460Z [INSTALL_PODS] Installing React-jsiexecutor (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4546780Z [INSTALL_PODS] Installing React-jsinspector (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4547410Z [INSTALL_PODS] Installing React-jsinspectorcdp (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4547780Z [INSTALL_PODS] Installing React-jsinspectornetwork (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4548160Z [INSTALL_PODS] Installing React-jsinspectortracing (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4548510Z [INSTALL_PODS] Installing React-jsitooling (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4548820Z [INSTALL_PODS] Installing React-jsitracing (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4549120Z [INSTALL_PODS] Installing React-logger (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4549480Z [INSTALL_PODS] Installing React-microtasksnativemodule (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4549890Z [INSTALL_PODS] Installing React-mutationobservernativemodule (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4550260Z [INSTALL_PODS] Installing React-networking (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4550580Z [INSTALL_PODS] Installing React-oscompat (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4550900Z [INSTALL_PODS] Installing React-perflogger (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4551280Z [INSTALL_PODS] Installing React-performancecdpmetrics (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4551680Z [INSTALL_PODS] Installing React-performancetimeline (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4552050Z [INSTALL_PODS] Installing React-rendererconsistency (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4552400Z [INSTALL_PODS] Installing React-renderercss (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4552750Z [INSTALL_PODS] Installing React-rendererdebug (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4553220Z [INSTALL_PODS] Installing React-runtimeexecutor (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4558780Z [INSTALL_PODS] Installing React-runtimescheduler (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4559290Z [INSTALL_PODS] Installing React-timing (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4559580Z [INSTALL_PODS] Installing React-utils (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4559950Z [INSTALL_PODS] Installing React-viewtransitionnativemodule (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4560410Z [INSTALL_PODS] Installing React-webperformancenativemodule (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4560910Z [INSTALL_PODS] Installing ReactAppDependencyProvider (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4561340Z [INSTALL_PODS] Installing ReactCodegen (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4561740Z [INSTALL_PODS] Installing ReactCommon (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:15.4562150Z [INSTALL_PODS] Installing ReactNativeDependencies (0.86.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:20.9500740Z [INSTALL_PODS] Installing Stripe (25.11.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:35.2596990Z [INSTALL_PODS] Installing StripeApplePay (25.11.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:46.9837970Z [INSTALL_PODS] Installing StripeCore (25.11.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:09:58.9455060Z [INSTALL_PODS] Installing StripeFinancialConnections (25.11.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:10:12.1284280Z [INSTALL_PODS] Installing StripeIssuing (25.11.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:10:23.7548360Z [INSTALL_PODS] Installing StripePaymentSheet (25.11.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:10:38.7736870Z [INSTALL_PODS] Installing StripePayments (25.11.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:10:52.4114040Z [INSTALL_PODS] Installing StripePaymentsUI (25.11.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:03.5034550Z [INSTALL_PODS] Installing StripeUICore (25.11.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:15.7184030Z [INSTALL_PODS] Installing Yoga (0.0.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:15.7184580Z [INSTALL_PODS] Installing hermes-engine (250829098.0.17)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:17.2946230Z [INSTALL_PODS] Installing react-native-maps (1.29.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:17.2947070Z [INSTALL_PODS] Installing react-native-safe-area-context (5.7.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:17.2948720Z [INSTALL_PODS] Installing react-native-webview (14.0.1)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:17.2949250Z [INSTALL_PODS] Installing stripe-react-native (0.64.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:17.3058160Z [INSTALL_PODS] [Expo] Ensuring required slices in ExpoModulesJSI.xcframework
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:31.2655180Z [INSTALL_PODS] [Expo] Staged 5/5 shared SPM xcframework(s) (debug)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:31.2755600Z [INSTALL_PODS] Generating Pods project
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:31.2821270Z [INSTALL_PODS] Setting USE_HERMES build settings
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:31.2827470Z [INSTALL_PODS] Setting REACT_NATIVE_PATH build settings
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:31.2848430Z [INSTALL_PODS] Setting SWIFT_ACTIVE_COMPILATION_CONDITIONS build settings
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8212910Z [INSTALL_PODS] [Ccache]: Removing Ccache from CC, LD, CXX & LDPLUSPLUS build settings
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8214350Z [INSTALL_PODS] Setting SWIFT_ENABLE_EXPLICIT_MODULES build settings
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8214920Z [INSTALL_PODS] [ReactNativeCore] Processing VFS overlay file...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8216240Z [INSTALL_PODS] [ReactNativeCore]   Created VFS overlay at /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/Pods/React-Core-prebuilt/React-VFS.yaml
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8217250Z [INSTALL_PODS] [ReactNativeCore] VFS overlay setup complete
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8217850Z [INSTALL_PODS] [ReactNativeCore] Configuring xcconfig for prebuilt React Native Core...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8218510Z [INSTALL_PODS] [ReactNativeCore] Prebuilt xcconfig configuration complete
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8219090Z [INSTALL_PODS] [SPM] Cleaning old SPM dependencies from Pods project
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8219640Z [INSTALL_PODS] [SPM] Adding SPM dependencies to Pods project
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8220350Z [INSTALL_PODS] [Privacy Manifest Aggregation] No existing PrivacyInfo.xcprivacy file found, creating a new one.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8221160Z [INSTALL_PODS] [Privacy Manifest Aggregation] Reading .xcprivacy files to aggregate all used Required Reason APIs.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8221730Z [INSTALL_PODS] file_root: Ridgenooks
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:32.8222740Z [INSTALL_PODS] Setting CLANG_CXX_LANGUAGE_STANDARD to c++20 on /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/Ridgenooks.xcodeproj
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8334170Z [INSTALL_PODS] ==================== DEPRECATION NOTICE =====================
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8334980Z [INSTALL_PODS] Calling `pod install` directly is deprecated in React Native
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8335540Z [INSTALL_PODS] because we are moving away from Cocoapods toward alternative
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8336040Z [INSTALL_PODS] solutions to build the project.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8336680Z [INSTALL_PODS] * If you are using Expo, please run:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8337530Z [INSTALL_PODS] `npx expo run:ios`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8338220Z [INSTALL_PODS] * If you are using the Community CLI, please run:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8338720Z [INSTALL_PODS] `yarn ios`
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8348010Z [INSTALL_PODS] =============================================================
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8348470Z [INSTALL_PODS] Pod install took 164 [s] to run
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8348840Z [INSTALL_PODS] Integrating client project
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:34.8349470Z [INSTALL_PODS] [!] Please close any current Xcode sessions and use `Ridgenooks.xcworkspace` for this project from now on.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:35.0081320Z [INSTALL_PODS] [Expo] Installing the build script for target Ridgenooks
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5395560Z [INSTALL_PODS] Pod installation complete! There are 112 dependencies from the Podfile and 120 total pods installed.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5396480Z [INSTALL_PODS] [Expo-precompiled] Precompiled modules:
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5398160Z [INSTALL_PODS] [Expo-precompiled]   📦 ExpoFileSystem (57.0.6)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5398830Z [INSTALL_PODS] [Expo-precompiled]   📦 ExpoFont (57.0.3)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5399490Z [INSTALL_PODS] [Expo-precompiled]   📦 ExpoImage (57.0.4)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5400170Z [INSTALL_PODS] [Expo-precompiled]       ∟ SDWebImage.xcframework (5.21.6)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5400940Z [INSTALL_PODS] [Expo-precompiled]       ∟ SDWebImageAVIFCoder.xcframework (0.12.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5401690Z [INSTALL_PODS] [Expo-precompiled]       ∟ SDWebImageSVGCoder.xcframework (1.8.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5402410Z [INSTALL_PODS] [Expo-precompiled]       ∟ SDWebImageWebPCoder.xcframework (0.15.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5403080Z [INSTALL_PODS] [Expo-precompiled]       ∟ libavif.xcframework (1.0.0)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5403650Z [INSTALL_PODS] [Expo-precompiled]   📦 ExpoLocation (57.0.16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5404220Z [INSTALL_PODS] [Expo-precompiled]   📦 ExpoModulesCore (57.0.16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5404860Z [INSTALL_PODS] [Expo-precompiled]   📦 ExpoModulesWorklets (57.0.16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5405590Z [INSTALL_PODS] [Expo] Disabling SWIFT_EMIT_MODULE_INTERFACE for pod targets (prebuilt React compatibility)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5409020Z [INSTALL_PODS] [Expo-precompiled] Looking for ExpoModulesCore.xcframework at: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/ios/Pods/ExpoModulesCore/ExpoModulesCore.xcframework
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5414580Z [INSTALL_PODS] [!] ExpoFileSystem has added 2 script phases. Please inspect before executing a build. See `https://guides.cocoapods.org/syntax/podspec.html#script_phases` for more information.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5416730Z [INSTALL_PODS] [Expo-precompiled] Adding ExpoModulesJSI header search paths to all targets
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5419080Z [INSTALL_PODS] [!] ExpoFont has added 2 script phases. Please inspect before executing a build. See `https://guides.cocoapods.org/syntax/podspec.html#script_phases` for more information.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5422010Z [INSTALL_PODS] [!] ExpoImage has added 2 script phases. Please inspect before executing a build. See `https://guides.cocoapods.org/syntax/podspec.html#script_phases` for more information.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5424970Z [INSTALL_PODS] [!] ExpoLocation has added 2 script phases. Please inspect before executing a build. See `https://guides.cocoapods.org/syntax/podspec.html#script_phases` for more information.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5428150Z [INSTALL_PODS] [!] ExpoModulesCore has added 2 script phases. Please inspect before executing a build. See `https://guides.cocoapods.org/syntax/podspec.html#script_phases` for more information.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5430930Z [INSTALL_PODS] [!] ExpoModulesWorklets has added 2 script phases. Please inspect before executing a build. See `https://guides.cocoapods.org/syntax/podspec.html#script_phases` for more information.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5432950Z [INSTALL_PODS] [!] React-Core-prebuilt has added 1 script phase. Please inspect before executing a build. See `https://guides.cocoapods.org/syntax/podspec.html#script_phases` for more information.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5434520Z [INSTALL_PODS] [!] ReactNativeDependencies has added 1 script phase. Please inspect before executing a build. See `https://guides.cocoapods.org/syntax/podspec.html#script_phases` for more information.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5436840Z [INSTALL_PODS] [!] hermes-engine has added 1 script phase. Please inspect before executing a build. See `https://guides.cocoapods.org/syntax/podspec.html#script_phases` for more information.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5438000Z [INSTALL_PODS] [Expo] Adding '[Expo] Remove duplicate codegen output' build phase to ReactCodegen
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5440340Z [INSTALL_PODS] [Expo] Raised resource bundle deployment targets to match their pods: AsyncStorage-AsyncStorage_resources, RNSVG-RNSVGFilters, Stripe-StripeBundle, StripeCore-StripeCoreBundle, StripeFinancialConnections-StripeFinancialConnectionsBundle, StripePaymentSheet-StripePaymentSheetBundle, StripePayments-StripePaymentsBundle, StripePayments-Stripe3DS2, StripePaymentsUI-StripePaymentsUIBundle, StripeUICore-StripeUICoreBundle
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5647260Z [CONFIGURE_XCODE_PROJECT] Configuring Xcode project
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:37.5649670Z [CONFIGURE_XCODE_PROJECT] Assigning provisioning profile '*[expo] com.ridgenooks.app AppStore 2026-09-26T12:40:55.410Z' (Apple Team ID: 2R4679C9P5) to target 'Ridgenooks'
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:38.2960840Z [EAGER_BUNDLE] Using src/app as the root directory for Expo Router.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:38.5850740Z [EAGER_BUNDLE] React Compiler enabled
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:38.7342340Z [EAGER_BUNDLE] Starting Metro Bundler
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2200670Z [EAGER_BUNDLE] iOS Bundling failed 11829ms node_modules/expo-router/entry.js (3588 modules)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2202290Z [EAGER_BUNDLE] SyntaxError: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/src/context/GlobalStateContext.tsx: Missing initializer in const declaration. (202:26)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2203560Z [EAGER_BUNDLE] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2204050Z [EAGER_BUNDLE] ^[[0m ^[[90m 200 |^[[39m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2205840Z [EAGER_BUNDLE]  ^[[90m 201 |^[[39m   ^[[36mconst^[[39m activeLocation ^[[33m=^[[39m selectedLocationFilter ^[[33m===^[[39m ^[[32m'Auto'^[[39m ^[[33m?^[[39m userLocationText ^[[33m:^[[39m selectedLocationFilter^[[33m;^[[39m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2213210Z [EAGER_BUNDLE] ^[[31m^[[1m>^[[22m^[[39m^[[90m 202 |^[[39m   ^[[36mconst^[[39m filteredProperties^[[33m,^[[39m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2214060Z [EAGER_BUNDLE]  ^[[90m     |^[[39m                           ^[[31m^[[1m^^[[22m^[[39m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2214740Z [EAGER_BUNDLE]  ^[[90m 203 |^[[39m     refreshProperties ^[[33m=^[[39m properties^[[33m.^[[39mfilter(p ^[[33m=>^[[39m {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2215880Z [EAGER_BUNDLE]  ^[[90m 204 |^[[39m     ^[[36mconst^[[39m matchesTab ^[[33m=^[[39m activeTab ^[[33m===^[[39m ^[[32m"All"^[[39m ^[[33m||^[[39m p^[[33m.^[[39mcategory ^[[33m===^[[39m activeTab^[[33m;^[[39m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2217980Z [EAGER_BUNDLE]  ^[[90m 205 |^[[39m     ^[[36mconst^[[39m matchesSearch ^[[33m=^[[39m p^[[33m.^[[39mtitle^[[33m.^[[39mtoLowerCase()^[[33m.^[[39mincludes(searchQuery^[[33m.^[[39mtoLowerCase()) ^[[33m||^[[39m p^[[33m.^[[39mlocation^[[33m.^[[39mtoLowerCase()^[[33m.^[[39mincludes(searchQuery^[[33m.^[[39mtoLowerCase())^[[33m;^[[39m^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2219900Z [EAGER_BUNDLE] SyntaxError: SyntaxError: /private/var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-local-nodejs/eb5464c8-7a0f-4149-9c41-1bfe5c2e5a4c/build/src/context/GlobalStateContext.tsx: Missing initializer in const declaration. (202:26)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2220840Z [EAGER_BUNDLE] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2221070Z [EAGER_BUNDLE] ^[[0m ^[[90m 200 |^[[39m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2222140Z [EAGER_BUNDLE]  ^[[90m 201 |^[[39m   ^[[36mconst^[[39m activeLocation ^[[33m=^[[39m selectedLocationFilter ^[[33m===^[[39m ^[[32m'Auto'^[[39m ^[[33m?^[[39m userLocationText ^[[33m:^[[39m selectedLocationFilter^[[33m;^[[39m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2223140Z [EAGER_BUNDLE] ^[[31m^[[1m>^[[22m^[[39m^[[90m 202 |^[[39m   ^[[36mconst^[[39m filteredProperties^[[33m,^[[39m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2223760Z [EAGER_BUNDLE]  ^[[90m     |^[[39m                           ^[[31m^[[1m^^[[22m^[[39m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2224530Z [EAGER_BUNDLE]  ^[[90m 203 |^[[39m     refreshProperties ^[[33m=^[[39m properties^[[33m.^[[39mfilter(p ^[[33m=>^[[39m {
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2225710Z [EAGER_BUNDLE]  ^[[90m 204 |^[[39m     ^[[36mconst^[[39m matchesTab ^[[33m=^[[39m activeTab ^[[33m===^[[39m ^[[32m"All"^[[39m ^[[33m||^[[39m p^[[33m.^[[39mcategory ^[[33m===^[[39m activeTab^[[33m;^[[39m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2229680Z [EAGER_BUNDLE]  ^[[90m 205 |^[[39m     ^[[36mconst^[[39m matchesSearch ^[[33m=^[[39m p^[[33m.^[[39mtitle^[[33m.^[[39mtoLowerCase()^[[33m.^[[39mincludes(searchQuery^[[33m.^[[39mtoLowerCase()) ^[[33m||^[[39m p^[[33m.^[[39mlocation^[[33m.^[[39mtoLowerCase()^[[33m.^[[39mincludes(searchQuery^[[33m.^[[39mtoLowerCase())^[[33m;^[[39m^[[0m
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2790310Z [EAGER_BUNDLE] 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2793770Z Error: npx expo export:embed --eager --platform ios --dev false exited with non-zero code: 1
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2795160Z     at ChildProcess.completionListener (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/spawn-async/build/spawnAsync.js:113:23)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2795850Z     at Object.onceWrapper (node:events:639:26)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2796150Z     at ChildProcess.emit (node:events:524:28)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2796490Z     at ChildProcess.emit (node:domain:489:12)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2796820Z     at maybeClose (node:internal/child_process:1104:16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2797160Z     at ChildProcess._handle.onexit (node:internal/child_process:304:5)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2797490Z     ...
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2797950Z     at spawnAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/spawn-async/build/spawnAsync.js:9:23)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2798650Z     at spawn (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/turtle-spawn/dist/index.js:16:47)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2799480Z     at runExpoCliCommand (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/utils/project.js:53:43)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2800250Z     at eagerBundleAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/common/eagerBundle.js:11:43)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2801090Z     at /Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/ios.js:141:58
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2802180Z     at BuildContext.runBuildPhase (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/context.js:128:34)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2803050Z     at buildInnerAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/ios.js:140:23)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2803780Z     at async buildAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/ios.js:56:9)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2804650Z     at async runBuilderWithHooksAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/common.js:13:13)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2805640Z     at async Object.iosBuilder (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/ios.js:41:16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:51.2806730Z [CLEAN_UP_CREDENTIALS] Destroying keychain - /var/folders/36/tjdph2t965j8snz9_vkdnw0r0000gn/T/eas-build-31cc720c-353e-4534-a6f6-cb5de30902e2.keychain
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:52.6594990Z [CLEAN_UP_CREDENTIALS] Removing provisioning profile
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:52.6655680Z 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:52.6656160Z Build failed
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2129660Z Unknown error. See logs of the Bundle JavaScript build phase for more information.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2130310Z Error: Unknown error. See logs of the Bundle JavaScript build phase for more information.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2197270Z     at resolveBuildPhaseErrorAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/buildErrors/detectError.js:61:12)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2198900Z     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2200220Z     at async BuildContext.handleBuildPhaseErrorAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/context.js:195:28)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2301910Z     at async BuildContext.runBuildPhase (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/context.js:140:35)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2403650Z     Error: build command failed.
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2404910Z     at async buildInnerAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/ios.js:140:13)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2412810Z     at async buildAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/ios.js:56:9)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2415550Z     at async runBuilderWithHooksAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/common.js:13:13)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2418520Z     at async Object.iosBuilder (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/@expo/build-tools/dist/builders/ios.js:41:16)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2419820Z     at async buildIosAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/eas-cli-local-build-plugin/dist/ios.js:43:12)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2422050Z     at async buildAsync (/Users/runner/.npm/_npx/ec03195a4097d9c5/node_modules/eas-cli-local-build-plugin/dist/build.js:58:29)
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2428010Z 
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2428490Z Build context (for debugging this failed local build):
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2428950Z   Platform: ios
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2430580Z   Build profile: production
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2431390Z   Workflow: managed
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2433840Z   Distribution: store
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2434200Z   Credentials source: remote
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2434530Z   Project root directory: .
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2434940Z   Required package manager: npm
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2435440Z   eas-cli version: 24.8.0
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2435760Z   SDK version: 57.0.0
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2435990Z   React Native version: 0.86.3
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2436250Z   Expo package version: 57.0.20
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2436420Z   App version: 1.0.0
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2436680Z   Fingerprint hash: 441007e303766f7dfa03bc6e3aa6bc4d2e4562e9
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2437030Z   Build tracking ID: 392a1f25-ccf0-4482-8ede-95daa14ebd57
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2437320Z   Project ID: 6422332d-c9a9-4fbd-8e6a-a119d7c0e49f
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2438080Z npx -y eas-cli-local-build-plugin@24.8.0 exited with non-zero code: 1
+build-and-submit-ios	Run EAS Build (Local iOS)	2026-09-26T21:11:58.2484810Z ##[error]Process completed with exit code 1.
+build-and-submit-ios	Post Checkout Code	﻿2026-09-26T21:11:58.2614650Z Post job cleanup.
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.5094250Z [command]/opt/homebrew/bin/git version
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.5176270Z git version 2.55.0
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.5195130Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/aa7e3011-4c7b-4e55-9068-212859800822/.gitconfig'
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.5204700Z Temporarily overriding HOME='/Users/runner/work/_temp/aa7e3011-4c7b-4e55-9068-212859800822' before making global git config changes
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.5205470Z Adding repository directory to the temporary git global config as a safe directory
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.5209150Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/RidgenooksMobile/RidgenooksMobile
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.5272040Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.5325890Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.6331420Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.6384970Z http.https://github.com/.extraheader
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.6391650Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.6469290Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.7171870Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build-and-submit-ios	Post Checkout Code	2026-09-26T21:11:58.7226340Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build-and-submit-ios	Complete job	﻿2026-09-26T21:11:58.7990960Z Cleaning up orphan processes
+build-and-submit-ios	Complete job	2026-09-26T21:11:59.2232750Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

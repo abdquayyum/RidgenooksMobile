@@ -1,18 +1,22 @@
-import { Tabs, Redirect } from "expo-router";
+import { Tabs, router } from "expo-router";
 import { Home, Search, Truck, Heart, User } from "lucide-react-native";
 import { useGlobalState } from "../../context/GlobalStateContext";
 import { View, Text } from "react-native";
+import { useEffect } from "react";
 
 export default function TabLayout() {
   const { userSettings, insets, isAuthenticated, isReady } = useGlobalState();
 
-  if (!isReady) {
-    return null; // Wait for bootstrap to finish
-  }
+  useEffect(() => {
+    if (isReady && !isAuthenticated) {
+      router.replace("/");
+    }
+  }, [isReady, isAuthenticated]);
 
-  if (!isAuthenticated) {
-    return <Redirect href="/" />;
+  if (!isReady || !isAuthenticated) {
+    return null; // Don't render tabs while kicking user out
   }
+  
   const isDark = userSettings?.dark_mode;
 
   return (
