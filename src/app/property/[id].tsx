@@ -365,7 +365,7 @@ export default function PropertyDetailsScreen() {
             <View className={`border-t pt-4 mb-6 ${userSettings.dark_mode ? 'border-slate-700' : 'border-slate-100'}`}>
               <View className="flex-row justify-between mb-2">
                 <Text className={`${userSettings.dark_mode ? 'text-slate-400' : 'text-slate-500'}`}>Subtotal ({checkoutNights} nights)</Text>
-                <Text className={`font-semibold ${userSettings.dark_mode ? 'text-white' : 'text-slate-900'}`}>{currencySymbol}{getDisplayPrice(getRawPrice(p.price) * checkoutNights)}</Text>
+                <Text className={`font-semibold ${userSettings.dark_mode ? 'text-white' : 'text-slate-900'}`}>{currencySymbol}{(getRawPrice(p.price) * checkoutNights).toLocaleString()}</Text>
               </View>
               <View className="flex-row justify-between mb-2">
                 <Text className={`${userSettings.dark_mode ? 'text-slate-400' : 'text-slate-500'}`}>Service Fee</Text>
@@ -373,13 +373,13 @@ export default function PropertyDetailsScreen() {
               </View>
               <View className={`flex-row justify-between mt-2 pt-2 border-t ${userSettings.dark_mode ? 'border-slate-700' : 'border-slate-100'}`}>
                 <Text className={`font-bold ${userSettings.dark_mode ? 'text-white' : 'text-slate-900'}`}>Total</Text>
-                <Text className={`font-bold text-xl ${userSettings.dark_mode ? 'text-white' : 'text-slate-900'}`}>{currencySymbol}{getDisplayPrice(getRawPrice(p.price) * checkoutNights + (currencySymbol === '$' ? 25 : 25000))}</Text>
+                <Text className={`font-bold text-xl ${userSettings.dark_mode ? 'text-white' : 'text-slate-900'}`}>{currencySymbol}{(getRawPrice(p.price) * checkoutNights + (currencySymbol === '$' ? 25 : 25000)).toLocaleString()}</Text>
               </View>
             </View>
 
             <TouchableOpacity onPress={handleCheckoutClick} className={`w-full py-4 rounded-xl flex-row justify-center items-center ${paymentGateway === 'paystack' ? 'bg-[#09A5DB]' : 'bg-[#635BFF]'}`}>
               <Lock size={18} color="#ffffff" className="mr-2" />
-              <Text className="text-white font-bold text-lg">Pay {currencySymbol}{getDisplayPrice(getRawPrice(p.price) * checkoutNights + (currencySymbol === '$' ? 25 : 25000))}</Text>
+              <Text className="text-white font-bold text-lg">Pay {currencySymbol}{(getRawPrice(p.price) * checkoutNights + (currencySymbol === '$' ? 25 : 25000)).toLocaleString()}</Text>
             </TouchableOpacity>
           </View>
         </View>
