@@ -63,7 +63,7 @@ export default function ProfileScreen() {
               <View className="flex-row items-center"><View className="h-10 w-10 bg-amber-50 rounded-full items-center justify-center mr-3"><FileText size={18} color="#d97706" /></View><Text className={`font-semibold text-sm ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>My Requests</Text></View>
               <ChevronRight size={18} color="#94a3b8" />
             </TouchableOpacity>
-            <TouchableOpacity onPress={async () => { await logout(); router.replace('/'); }} className="flex-row items-center justify-between p-4">
+            <TouchableOpacity onPress={async () => { await logout(); }} className="flex-row items-center justify-between p-4">
               <View className="flex-row items-center"><View className="h-10 w-10 bg-red-50 rounded-full items-center justify-center mr-3"><LogOut size={18} color="#ef4444" /></View><Text className="font-semibold text-red-500 text-sm">Log Out</Text></View>
             </TouchableOpacity>
           </View>

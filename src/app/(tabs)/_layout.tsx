@@ -4,7 +4,11 @@ import { useGlobalState } from "../../context/GlobalStateContext";
 import { View, Text } from "react-native";
 
 export default function TabLayout() {
-  const { userSettings, insets, isAuthenticated } = useGlobalState();
+  const { userSettings, insets, isAuthenticated, isReady } = useGlobalState();
+
+  if (!isReady) {
+    return null; // Wait for bootstrap to finish
+  }
 
   if (!isAuthenticated) {
     return <Redirect href="/" />;
