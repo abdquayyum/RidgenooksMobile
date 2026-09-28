@@ -20,8 +20,8 @@ export default function TransactionsScreen() {
   const filteredTransactions = useMemo(() => {
     return transactions.filter(txn => {
       const matchesSearch = 
-        txn.ref?.toLowerCase().includes(searchQuery.toLowerCase()) || 
-        (txn.property_title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+        String(txn.id).toLowerCase().includes(searchQuery.toLowerCase()) || 
+        (getTxnProperty(txn.property_id)?.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
         String(txn.amount).includes(searchQuery);
         
       const matchesFilter = activeFilter === 'All' || txn.status?.toLowerCase() === activeFilter.toLowerCase();
@@ -32,6 +32,7 @@ export default function TransactionsScreen() {
 
   const FILTERS = ['All', 'Completed', 'Pending', 'Failed'];
 
+  const parseDate = (d) => new Date(d);
   const getStatusColor = (status) => {
     const s = status?.toLowerCase() || '';
     if (s === 'completed' || s === 'success') return { bg: 'bg-green-100', text: 'text-green-700' };
@@ -101,10 +102,10 @@ export default function TransactionsScreen() {
               >
                 <View className="flex-row justify-between items-start mb-3">
                   <View className="flex-1 mr-4">
-                    <Text className={`font-bold text-lg leading-tight mb-1 ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{txn.property_title || `Booking #${txn.id}`}</Text>
+                    <Text className={`font-bold text-lg leading-tight mb-1 ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{getTxnProperty(txn.property_id)?.title || `Booking #${txn.id}`}</Text>
                     <View className="flex-row items-center">
                       <Clock size={12} color="#94a3b8" />
-                      <Text className="text-slate-400 text-xs ml-1">{new Date(txn.date).toLocaleDateString()} • {new Date(txn.date).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</Text>
+                      <Text className="text-slate-400 text-xs ml-1">{parseDate(txn.date).toLocaleDateString()} • {parseDate(txn.date).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</Text>
                     </View>
                   </View>
                   <View className="items-end">
@@ -117,7 +118,7 @@ export default function TransactionsScreen() {
                   </View>
                 </View>
                 <View className={`pt-3 border-t flex-row items-center justify-between ${userSettings?.dark_mode ? 'border-slate-800' : 'border-slate-100'}`}>
-                  <Text className="text-slate-400 text-xs font-medium">Ref: {txn.ref}</Text>
+                  <Text className="text-slate-400 text-xs font-medium">Ref: {txn.id}</Text>
                   <Text className="text-amber-500 text-xs font-bold">View Details →</Text>
                 </View>
               </TouchableOpacity>
@@ -135,7 +136,7 @@ export default function TransactionsScreen() {
               
               <View className="flex-row justify-between items-center mb-6">
                 <Text className={`text-2xl font-black tracking-tight ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>Receipt</Text>
-                <TouchableOpacity onPress={() => setSelectedTxn(null)} className="h-8 w-8 rounded-full bg-slate-100 dark:bg-slate-800 items-center justify-center">
+                <TouchableOpacity onPress={() => setSelectedTxn(null)} className={`h-8 w-8 rounded-full items-center justify-center ${userSettings?.dark_mode ? 'bg-slate-800' : 'bg-slate-100'}`}>
                   <X size={20} color={userSettings?.dark_mode ? '#ffffff' : '#0f172a'} />
                 </TouchableOpacity>
               </View>
@@ -160,7 +161,7 @@ export default function TransactionsScreen() {
                     </View>
                     <View className="flex-1">
                       <Text className="text-slate-400 text-xs font-bold mb-1">Property</Text>
-                      <Text className={`font-bold text-base ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{selectedTxn.property_title || 'Unknown Property'}</Text>
+                      <Text className={`font-bold text-base ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{getTxnProperty(selectedTxn.property_id)?.title || 'Unknown Property'}</Text>
                     </View>
                   </View>
 
@@ -172,7 +173,7 @@ export default function TransactionsScreen() {
                       <View className="flex-1">
                         <Text className="text-slate-400 text-xs font-bold mb-1">Stay Dates</Text>
                         <Text className={`font-bold text-sm ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>
-                          {new Date(selectedTxn.check_in).toLocaleDateString()} - {new Date(selectedTxn.check_out).toLocaleDateString()}
+                          {parseDate(selectedTxn.check_in).toLocaleDateString()} - {parseDate(selectedTxn.check_out).toLocaleDateString()}
                         </Text>
                       </View>
                     </View>
@@ -185,7 +186,7 @@ export default function TransactionsScreen() {
                     <View className="flex-1">
                       <Text className="text-slate-400 text-xs font-bold mb-1">Payment Method</Text>
                       <Text className={`font-bold text-sm ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>
-                        {selectedTxn.ref?.startsWith('pi_') ? 'Stripe Checkout' : 'Paystack Checkout'}
+                        {String(selectedTxn.id).startsWith('pi_') ? 'Stripe Checkout' : 'Paystack Checkout'}
                       </Text>
                     </View>
                   </View>
@@ -196,21 +197,21 @@ export default function TransactionsScreen() {
                 <View className={`rounded-3xl p-5 ${userSettings?.dark_mode ? 'bg-slate-800' : 'bg-slate-50'}`}>
                   <View className={`flex-row justify-between py-3 border-b ${userSettings?.dark_mode ? 'border-slate-700' : 'border-slate-200'}`}>
                     <Text className="text-slate-400 font-medium">Reference ID</Text>
-                    <Text className={`font-bold ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{selectedTxn.ref}</Text>
+                    <Text className={`font-bold ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{selectedTxn.id}</Text>
                   </View>
                   <View className={`flex-row justify-between py-3 border-b ${userSettings?.dark_mode ? 'border-slate-700' : 'border-slate-200'}`}>
                     <Text className="text-slate-400 font-medium">Date</Text>
-                    <Text className={`font-bold ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{new Date(selectedTxn.date).toLocaleDateString()}</Text>
+                    <Text className={`font-bold ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{parseDate(selectedTxn.date).toLocaleDateString()}</Text>
                   </View>
                   <View className="flex-row justify-between py-3">
                     <Text className="text-slate-400 font-medium">Time</Text>
-                    <Text className={`font-bold ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{new Date(selectedTxn.date).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</Text>
+                    <Text className={`font-bold ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{parseDate(selectedTxn.date).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</Text>
                   </View>
                 </View>
 
                 <TouchableOpacity 
                   onPress={() => setSelectedTxn(null)} 
-                  className="mt-8 h-14 bg-slate-900 dark:bg-white rounded-2xl items-center justify-center shadow-lg"
+                  className={`mt-8 h-14 rounded-2xl items-center justify-center shadow-lg ${userSettings?.dark_mode ? 'bg-white' : 'bg-slate-900'}`}
                 >
                   <Text className={`font-bold text-lg ${userSettings?.dark_mode ? 'text-slate-900' : 'text-white'}`}>Close Receipt</Text>
                 </TouchableOpacity>
