@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Image, TextInput, Modal, Alert, ActivityIndicator } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Image, TextInput, Modal, Alert, ActivityIndicator, KeyboardAvoidingView, Platform } from 'react-native';
 import { router } from 'expo-router';
 import { Truck, Box, ShieldCheck, ChevronLeft, ArrowRight, X } from 'lucide-react-native';
 import { useGlobalState } from '../../context/GlobalStateContext';
@@ -83,27 +83,34 @@ export default function LogisticsScreen() {
       </ScrollView>
 
       <Modal visible={showLogisticsForm} transparent animationType="slide">
-        <View className="flex-1 justify-end bg-slate-900/80">
-          <View className={`w-full rounded-t-[40px] p-8 shadow-2xl ${userSettings?.dark_mode ? 'bg-slate-800' : 'bg-white'}`} style={{ paddingBottom: (insets?.bottom || 0) + 20 }}>
-            <View className="flex-row justify-between items-center mb-8">
-              <Text className={`text-2xl font-bold ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>Request {selectedService?.title}</Text>
-              <TouchableOpacity onPress={() => setShowLogisticsForm(false)} className={`h-10 w-10 rounded-full items-center justify-center ${userSettings?.dark_mode ? 'bg-slate-700' : 'bg-slate-100'}`}>
-                <X size={24} color={userSettings?.dark_mode ? '#cbd5e1' : '#64748b'} />
-              </TouchableOpacity>
-            </View>
-            
-            <View className="mb-8">
-              <TextInput value={logOrigin} onChangeText={setLogOrigin} placeholderTextColor="#94a3b8" placeholder="Pickup/Origin Address" className={`w-full border rounded-2xl px-5 py-5 mb-5 text-base ${userSettings?.dark_mode ? 'bg-slate-900 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-900'}`} />
-              <TextInput value={logDest} onChangeText={setLogDest} placeholderTextColor="#94a3b8" placeholder="Dropoff/Destination (Optional)" className={`w-full border rounded-2xl px-5 py-5 mb-5 text-base ${userSettings?.dark_mode ? 'bg-slate-900 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-900'}`} />
-              <TextInput value={logDate} onChangeText={setLogDate} placeholderTextColor="#94a3b8" placeholder="Preferred Date (DD/MM/YYYY)" className={`w-full border rounded-2xl px-5 py-5 mb-5 text-base ${userSettings?.dark_mode ? 'bg-slate-900 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-900'}`} />
-              <TextInput value={logDetails} onChangeText={setLogDetails} placeholderTextColor="#94a3b8" placeholder="Additional Details..." multiline numberOfLines={3} className={`w-full border rounded-2xl px-5 py-5 h-32 text-base ${userSettings?.dark_mode ? 'bg-slate-900 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-900'}`} />
-            </View>
+        <KeyboardAvoidingView 
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
+          className="flex-1"
+        >
+          <View className="flex-1 justify-end bg-slate-900/80">
+            <View className={`w-full max-h-[85%] rounded-t-[40px] p-8 shadow-2xl ${userSettings?.dark_mode ? 'bg-slate-800' : 'bg-white'}`} style={{ paddingBottom: (insets?.bottom || 0) + 20 }}>
+              <View className="flex-row justify-between items-center mb-8">
+                <Text className={`text-2xl font-bold ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>Request {selectedService?.title}</Text>
+                <TouchableOpacity onPress={() => setShowLogisticsForm(false)} className={`h-10 w-10 rounded-full items-center justify-center ${userSettings?.dark_mode ? 'bg-slate-700' : 'bg-slate-100'}`}>
+                  <X size={24} color={userSettings?.dark_mode ? '#cbd5e1' : '#64748b'} />
+                </TouchableOpacity>
+              </View>
+              
+              <ScrollView showsVerticalScrollIndicator={false} bounces={false}>
+                <View className="mb-8">
+                  <TextInput value={logOrigin} onChangeText={setLogOrigin} placeholderTextColor="#94a3b8" placeholder="Pickup/Origin Address" className={`w-full border rounded-2xl px-5 py-5 mb-5 text-base ${userSettings?.dark_mode ? 'bg-slate-900 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-900'}`} />
+                  <TextInput value={logDest} onChangeText={setLogDest} placeholderTextColor="#94a3b8" placeholder="Dropoff/Destination (Optional)" className={`w-full border rounded-2xl px-5 py-5 mb-5 text-base ${userSettings?.dark_mode ? 'bg-slate-900 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-900'}`} />
+                  <TextInput value={logDate} onChangeText={setLogDate} placeholderTextColor="#94a3b8" placeholder="Preferred Date (DD/MM/YYYY)" className={`w-full border rounded-2xl px-5 py-5 mb-5 text-base ${userSettings?.dark_mode ? 'bg-slate-900 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-900'}`} />
+                  <TextInput value={logDetails} onChangeText={setLogDetails} placeholderTextColor="#94a3b8" placeholder="Additional Details..." multiline numberOfLines={3} style={{ textAlignVertical: 'top' }} className={`w-full border rounded-2xl px-5 py-5 h-32 text-base ${userSettings?.dark_mode ? 'bg-slate-900 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-900'}`} />
+                </View>
 
-            <TouchableOpacity onPress={submitLogisticsRequest} disabled={submittingLogistics} className="w-full bg-amber-500 py-5 rounded-2xl items-center">
-              {submittingLogistics ? <ActivityIndicator color="#0f172a" /> : <Text className="text-slate-900 font-bold text-xl">Submit Request</Text>}
-            </TouchableOpacity>
+                <TouchableOpacity onPress={submitLogisticsRequest} disabled={submittingLogistics} className="w-full bg-amber-500 py-5 rounded-2xl items-center mb-4">
+                  {submittingLogistics ? <ActivityIndicator color="#0f172a" /> : <Text className="text-slate-900 font-bold text-xl">Submit Request</Text>}
+                </TouchableOpacity>
+              </ScrollView>
+            </View>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       </Modal>
     </View>
   );
