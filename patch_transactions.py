@@ -1,4 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import sys
+
+with open('src/app/transactions.tsx', 'w') as f:
+    f.write("""import React, { useState, useMemo } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, RefreshControl, TextInput, Modal } from 'react-native';
 import { router } from 'expo-router';
 import { ChevronLeft, Search, Filter, X, MapPin, Calendar, Clock, CreditCard, Hash } from 'lucide-react-native';
@@ -223,3 +226,4 @@ export default function TransactionsScreen() {
     </View>
   );
 }
+""")
