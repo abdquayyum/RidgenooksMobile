@@ -15,8 +15,12 @@ export const GlobalStateProvider = ({ children }) => {
     const bootstrapAsync = async () => {
       try {
         const userToken = await SecureStore.getItemAsync('userToken');
+        const userData = await SecureStore.getItemAsync('userData');
         if (userToken) {
           setAuthToken(userToken);
+          if (userData) {
+            setCurrentUser(JSON.parse(userData));
+          }
           setIsAuthenticated(true);
         }
         setIsReady(true);

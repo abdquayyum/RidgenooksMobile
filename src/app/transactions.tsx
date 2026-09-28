@@ -18,16 +18,17 @@ export default function TransactionsScreen() {
   };
 
   const filteredTransactions = useMemo(() => {
-    return transactions.filter(txn => {
+    return (transactions || []).filter(txn => {
+      const q = (searchQuery || '').toLowerCase();
       const matchesSearch = 
-        String(txn.id).toLowerCase().includes(searchQuery.toLowerCase()) || 
-        (getTxnProperty(txn.property_id)?.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-        String(txn.amount).includes(searchQuery);
+        String(txn.ref || txn.id || '').toLowerCase().includes(q) || 
+        String(txn.property_title || '').toLowerCase().includes(q) ||
+        String(txn.amount || '').includes(q);
         
-      const matchesFilter = activeFilter === 'All' || txn.status?.toLowerCase() === activeFilter.toLowerCase();
+      const matchesFilter = activeFilter === 'All' || (txn.status || '').toLowerCase() === (activeFilter || '').toLowerCase();
       
       return matchesSearch && matchesFilter;
-    }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    }).sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime());
   }, [transactions, searchQuery, activeFilter]);
 
   const FILTERS = ['All', 'Completed', 'Pending', 'Failed'];
@@ -41,9 +42,6 @@ export default function TransactionsScreen() {
     return { bg: 'bg-slate-100', text: 'text-slate-700' };
   };
 
-  const getTxnProperty = (propertyId) => {
-    return properties?.find(p => p.id === propertyId);
-  };
 
   return (
     <View className={`flex-1 pt-14 ${userSettings?.dark_mode ? 'bg-slate-950' : 'bg-slate-50'}`}>
@@ -102,7 +100,7 @@ export default function TransactionsScreen() {
               >
                 <View className="flex-row justify-between items-start mb-3">
                   <View className="flex-1 mr-4">
-                    <Text className={`font-bold text-lg leading-tight mb-1 ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{getTxnProperty(txn.property_id)?.title || `Booking #${txn.id}`}</Text>
+                    <Text className={`font-bold text-lg leading-tight mb-1 ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{txn.property_title || `Booking #${txn.ref || txn.id}`}</Text>
                     <View className="flex-row items-center">
                       <Clock size={12} color="#94a3b8" />
                       <Text className="text-slate-400 text-xs ml-1">{parseDate(txn.date).toLocaleDateString()} • {parseDate(txn.date).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</Text>
@@ -118,7 +116,7 @@ export default function TransactionsScreen() {
                   </View>
                 </View>
                 <View className={`pt-3 border-t flex-row items-center justify-between ${userSettings?.dark_mode ? 'border-slate-800' : 'border-slate-100'}`}>
-                  <Text className="text-slate-400 text-xs font-medium">Ref: {txn.id}</Text>
+                  <Text className="text-slate-400 text-xs font-medium">Ref: {txn.ref || txn.id}</Text>
                   <Text className="text-amber-500 text-xs font-bold">View Details →</Text>
                 </View>
               </TouchableOpacity>
@@ -161,7 +159,7 @@ export default function TransactionsScreen() {
                     </View>
                     <View className="flex-1">
                       <Text className="text-slate-400 text-xs font-bold mb-1">Property</Text>
-                      <Text className={`font-bold text-base ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{getTxnProperty(selectedTxn.property_id)?.title || 'Unknown Property'}</Text>
+                      <Text className={`font-bold text-base ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{selectedTxn.property_title || 'Unknown Property'}</Text>
                     </View>
                   </View>
 
@@ -197,7 +195,7 @@ export default function TransactionsScreen() {
                 <View className={`rounded-3xl p-5 ${userSettings?.dark_mode ? 'bg-slate-800' : 'bg-slate-50'}`}>
                   <View className={`flex-row justify-between py-3 border-b ${userSettings?.dark_mode ? 'border-slate-700' : 'border-slate-200'}`}>
                     <Text className="text-slate-400 font-medium">Reference ID</Text>
-                    <Text className={`font-bold ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{selectedTxn.id}</Text>
+                    <Text className={`font-bold ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`}>{selectedTxn.ref || selectedTxn.id}</Text>
                   </View>
                   <View className={`flex-row justify-between py-3 border-b ${userSettings?.dark_mode ? 'border-slate-700' : 'border-slate-200'}`}>
                     <Text className="text-slate-400 font-medium">Date</Text>
