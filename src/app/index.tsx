@@ -16,9 +16,6 @@ export default function AuthScreen() {
   const [loading, setLoading] = useState(false);
 
   if (!isReady) return null;
-  if (isAuthenticated) {
-    return <Redirect href="/(tabs)" />;
-  }
 
   const handleSubmit = async () => {
     if (!email || !password || (isRegister && (!name || !phone || !confirmPassword))) {
