@@ -1,5 +1,5 @@
 import "../global.css";
-import { Stack, router, useSegments } from "expo-router";
+import { Stack, router, usePathname } from "expo-router";
 import { GlobalStateProvider, useGlobalState } from "../context/GlobalStateContext";
 import { StripeProvider } from "@stripe/stripe-react-native";
 import { PaystackProvider } from "react-native-paystack-webview";
@@ -9,21 +9,21 @@ import { useEffect } from 'react';
 
 function AuthGuard({ children }: { children: React.ReactNode }) {
   const { isReady, isAuthenticated } = useGlobalState();
-  const segments = useSegments();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!isReady) return;
-
-    const inTabsGroup = segments[0] === '(tabs)';
     
-    if (!isAuthenticated && inTabsGroup) {
-      // Force redirect to login if they lose auth while inside the app
-      router.replace('/');
-    } else if (isAuthenticated && segments.length === 0) {
-      // Force redirect to tabs if they are on the login screen and authenticated
-      router.replace('/(tabs)');
-    }
-  }, [isReady, isAuthenticated, segments]);
+    // Slight delay to prevent navigation state conflicts during re-renders
+    const timer = setTimeout(() => {
+      if (!isAuthenticated && pathname !== '/login') {
+        router.replace('/login');
+      } else if (isAuthenticated && pathname === '/login') {
+        router.replace('/');
+      }
+    }, 10);
+    return () => clearTimeout(timer);
+  }, [isReady, isAuthenticated, pathname]);
 
   return <>{children}</>;
 }
