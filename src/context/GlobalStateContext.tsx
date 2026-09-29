@@ -10,6 +10,8 @@ export const GlobalStateProvider = ({ children }) => {
   const [isReady, setIsReady] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [authToken, setAuthToken] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [authBootstrapped, setAuthBootstrapped] = useState(false);
   
   useEffect(() => {
     const bootstrapAsync = async () => {
@@ -23,10 +25,13 @@ export const GlobalStateProvider = ({ children }) => {
           }
           setIsAuthenticated(true);
         }
-        setIsReady(true);
+        setAuthBootstrapped(true);
       } catch (e) {
         console.warn(e);
-      } finally { setIsReady(true); }
+        setAuthBootstrapped(true);
+      } finally { 
+        setIsReady(true); 
+      }
     };
     bootstrapAsync();
   }, []);
@@ -46,7 +51,7 @@ export const GlobalStateProvider = ({ children }) => {
   const API_URL = "https://api.ridgenooksinc.com"; 
 
   const [properties, setProperties] = useState([]);
-  const [currentUser, setCurrentUser] = useState({ name: "", email: "", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" });
+
   
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [showCheckout, setShowCheckout] = useState(false);
@@ -114,16 +119,24 @@ export const GlobalStateProvider = ({ children }) => {
   const logout = async () => {
     setAuthToken(null);
     setIsAuthenticated(false);
-    setCurrentUser({ name: "", email: "", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" });
+    setCurrentUser(null);
     try {
       await SecureStore.deleteItemAsync('userToken');
       await SecureStore.deleteItemAsync('userData');
     } catch(e) { console.warn(e); }
   };
 
-  const loadUserData = async (emailToLoad) => {
+  const loadUserData = async () => {
     if(!authToken) return;
     try {
+      // Fetch user profile securely using token
+      let meRes = await fetch(`${API_URL}/api/me`, { headers: getAuthHeader() });
+      if (meRes.status === 401) { logout(); return; }
+      if (meRes.ok) {
+        const meData = await meRes.json();
+        setCurrentUser(meData);
+      }
+
       let res = await fetch(`${API_URL}/api/saved`, { headers: getAuthHeader() });
       if (res.status === 401) { logout(); return; }
       setSavedPropertyIds(await res.json());
@@ -223,6 +236,8 @@ export const GlobalStateProvider = ({ children }) => {
   });
 
   useEffect(() => {
+    if (!authBootstrapped) return; // Prevent overwriting during initial load
+    
     if (authToken && currentUser?.email) {
       SecureStore.setItemAsync('userToken', authToken).catch(console.warn);
       SecureStore.setItemAsync('userData', JSON.stringify(currentUser)).catch(console.warn);
@@ -230,7 +245,7 @@ export const GlobalStateProvider = ({ children }) => {
       SecureStore.deleteItemAsync('userToken').catch(console.warn);
       SecureStore.deleteItemAsync('userData').catch(console.warn);
     }
-  }, [authToken, currentUser]);
+  }, [authToken, currentUser, authBootstrapped]);
 
   
   const refreshProperties = async () => {

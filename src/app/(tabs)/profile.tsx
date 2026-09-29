@@ -32,8 +32,8 @@ export default function ProfileScreen() {
               <Camera size={14} color="#0f172a" />
             </TouchableOpacity>
           </View>
-          <Text className="text-2xl font-bold text-white mb-2">{currentUser?.name}</Text>
-          <Text className="text-slate-400 text-base">{currentUser?.email}</Text>
+          <Text className="text-2xl font-bold text-white mb-2">{currentUser?.name || "Loading..."}</Text>
+          <Text className="text-slate-400 text-base">{currentUser?.email || "..."}</Text>
         </View>
         <View className="p-5">
 
