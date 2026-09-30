@@ -84,7 +84,7 @@ export default function LogisticsScreen() {
 
       <Modal visible={showLogisticsForm} transparent animationType="slide">
         <KeyboardAvoidingView 
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
+          behavior={Platform.OS === 'ios' ? 'padding' : undefined} 
           className="flex-1"
         >
           <View className="flex-1 justify-end bg-slate-900/80">
@@ -96,7 +96,7 @@ export default function LogisticsScreen() {
                 </TouchableOpacity>
               </View>
               
-              <ScrollView showsVerticalScrollIndicator={false} bounces={false}>
+              <ScrollView showsVerticalScrollIndicator={false} bounces={false} keyboardShouldPersistTaps="handled">
                 <View className="mb-8">
                   <TextInput value={logOrigin} onChangeText={setLogOrigin} placeholderTextColor="#94a3b8" placeholder="Pickup/Origin Address" className={`w-full border rounded-2xl px-5 py-5 mb-5 text-base ${userSettings?.dark_mode ? 'bg-slate-900 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-900'}`} />
                   <TextInput value={logDest} onChangeText={setLogDest} placeholderTextColor="#94a3b8" placeholder="Dropoff/Destination (Optional)" className={`w-full border rounded-2xl px-5 py-5 mb-5 text-base ${userSettings?.dark_mode ? 'bg-slate-900 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-900'}`} />
