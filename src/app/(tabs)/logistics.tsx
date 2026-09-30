@@ -84,7 +84,7 @@ export default function LogisticsScreen() {
 
       <Modal visible={showLogisticsForm} transparent animationType="slide">
         <KeyboardAvoidingView 
-          behavior={Platform.OS === 'ios' ? 'padding' : undefined} 
+          behavior="padding" keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20} 
           className="flex-1"
         >
           <View className="flex-1 justify-end bg-slate-900/80">

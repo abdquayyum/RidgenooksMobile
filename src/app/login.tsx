@@ -66,9 +66,10 @@ export default function AuthScreen() {
   return (
     <KeyboardAvoidingView 
       className="flex-1 bg-slate-950" 
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      behavior="padding" keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20}
     >
-      <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: "center", padding: 20 }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1, padding: 20, paddingBottom: 100 }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+        <View style={{ flex: 1 }} />
         <View className="items-center mb-8">
           <Image source={LOGO_TRANSPARENT_SRC} style={{ width: 150, height: 150 }} resizeMode="contain" />
           <Text className="text-3xl font-bold text-white mt-4">Welcome to Ridgenooks</Text>
@@ -113,6 +114,7 @@ export default function AuthScreen() {
             <Text className="text-amber-500 font-bold">{isRegister ? 'Sign In' : 'Register'}</Text>
           </Text>
         </TouchableOpacity>
+              <View style={{ flex: 1 }} />
       </ScrollView>
     </KeyboardAvoidingView>
   );
