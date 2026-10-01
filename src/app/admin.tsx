@@ -25,7 +25,7 @@ export default function AdminDashboardScreen() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-        if (adminTab === 'logistics') {
+    if (adminTab === 'logistics') {
       fetch(`${API_URL}/api/admin/requests`, { headers: getAuthHeader() })
         .then(res => res.json())
         .then(data => setAdminRequests(data))
@@ -36,10 +36,6 @@ export default function AdminDashboardScreen() {
         .then(res => res.json())
         .then(data => setAdminBookings(data))
         .catch(e => console.error(e));
-    }/api/admin/requests`, { headers: getAuthHeader() })
-        .then(res => res.json())
-        .then(data => setAdminRequests(data))
-        .catch(e => console.error(e));
     }
   }, [adminTab]);
 
@@ -47,17 +43,26 @@ export default function AdminDashboardScreen() {
     setEditingId(p.id);
     setTitle(p.title);
     setCategory(p.category);
-    setPrice(p.price.toString());
     setUnit(p.unit);
     // Split location: "Exact Location, Country"
     const parts = p.location.split(', ');
+    let loadedCountry = "Nigeria";
     if (parts.length > 1) {
-      setCountry(parts.pop());
+      loadedCountry = parts.pop();
+      setCountry(loadedCountry);
       setExactLoc(parts.join(', '));
     } else {
       setCountry("Nigeria");
       setExactLoc(p.location);
     }
+    
+    // Scale price back down for editing if it's a dollar property
+    let editPrice = p.price;
+    if (loadedCountry !== 'Nigeria') {
+      editPrice = editPrice / 1500;
+    }
+    setPrice(editPrice.toString());
+    
     setDescription(p.description || "");
     setBeds(p.beds?.toString() || "1");
     setBaths(p.baths?.toString() || "1");
@@ -171,7 +176,7 @@ export default function AdminDashboardScreen() {
         {adminTab === 'manage' && (
           <View>
             {properties.length === 0 ? <Text className="text-slate-500 text-center mt-10">No properties available.</Text> : properties.map(p => (
-              <View key={p.id} className={`${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-100'} p-4 rounded-2xl mb-4 border shadow-sm flex-row items-center`}>
+              <TouchableOpacity key={p.id} onPress={() => loadEdit(p)} className={`${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-100'} p-4 rounded-2xl mb-4 border shadow-sm flex-row items-center`}>
                 <Image source={{ uri: p.images?.[0] || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9" }} className="w-16 h-16 rounded-xl mr-3" />
                 <View className="flex-1">
                   <Text className={`font-bold text-sm mb-1 ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`} numberOfLines={1}>{p.title}</Text>
@@ -185,7 +190,7 @@ export default function AdminDashboardScreen() {
                     <Trash2 size={18} color="#ef4444" />
                   </TouchableOpacity>
                 </View>
-              </View>
+              </TouchableOpacity>
             ))}
           </View>
         )}
@@ -198,7 +203,13 @@ export default function AdminDashboardScreen() {
             {/* Made responsive by changing to column layout on mobile */}
             <View className="mb-4">
               <View className="mb-3"><Text className="text-slate-500 text-xs mb-1 uppercase font-bold">Category</Text><TextInput value={category} onChangeText={setCategory} className={`h-12 px-4 rounded-xl border ${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-slate-200'}`} /></View>
-              <View className="mb-3"><Text className="text-slate-500 text-xs mb-1 uppercase font-bold">Price</Text><TextInput value={price} onChangeText={setPrice} keyboardType="numeric" className={`h-12 px-4 rounded-xl border ${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-slate-200'}`} /></View>
+              <View className="mb-3">
+              <Text className="text-slate-500 text-xs mb-1 uppercase font-bold">Price ({country === 'Nigeria' ? '₦ (Naira)' : '$ (USD)'})</Text>
+              <View className="relative justify-center">
+                <Text className="absolute left-4 z-10 text-slate-400 font-bold">{country === 'Nigeria' ? '₦' : '$'}</Text>
+                <TextInput value={price} onChangeText={setPrice} keyboardType="numeric" className={`h-12 pl-10 pr-4 rounded-xl border ${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-slate-200'}`} />
+              </View>
+            </View>
               <View className="mb-3"><Text className="text-slate-500 text-xs mb-1 uppercase font-bold">Unit</Text><TextInput value={unit} onChangeText={setUnit} className={`h-12 px-4 rounded-xl border ${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-slate-200'}`} /></View>
             </View>
 
