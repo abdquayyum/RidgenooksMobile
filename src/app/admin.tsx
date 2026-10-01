@@ -8,6 +8,7 @@ export default function AdminDashboardScreen() {
   const { userSettings, API_URL, getAuthHeader, refreshProperties, properties, currencySymbol, getDisplayPrice } = useGlobalState();
   const [adminTab, setAdminTab] = useState('manage'); // manage, create, logistics
   const [adminRequests, setAdminRequests] = useState([]);
+  const [adminBookings, setAdminBookings] = useState([]);
   
   // Form fields
   const [editingId, setEditingId] = useState(null);
@@ -24,8 +25,18 @@ export default function AdminDashboardScreen() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    if (adminTab === 'logistics') {
+        if (adminTab === 'logistics') {
       fetch(`${API_URL}/api/admin/requests`, { headers: getAuthHeader() })
+        .then(res => res.json())
+        .then(data => setAdminRequests(data))
+        .catch(e => console.error(e));
+    }
+    if (adminTab === 'bookings') {
+      fetch(`${API_URL}/api/admin/bookings`, { headers: getAuthHeader() })
+        .then(res => res.json())
+        .then(data => setAdminBookings(data))
+        .catch(e => console.error(e));
+    }/api/admin/requests`, { headers: getAuthHeader() })
         .then(res => res.json())
         .then(data => setAdminRequests(data))
         .catch(e => console.error(e));
@@ -84,60 +95,55 @@ export default function AdminDashboardScreen() {
     setIsSubmitting(true);
     
     try {
-      if (editingId) {
-        // UPDATE (using FormData because that's how we structured the endpoints)
-        const formData = new FormData();
-        formData.append('title', title);
-        formData.append('category', category);
-        formData.append('price', price);
-        formData.append('unit', unit);
-        formData.append('location', `${exactLoc}, ${country}`);
-        formData.append('description', description);
-        formData.append('beds', beds);
-        formData.append('baths', baths);
-        formData.append('sqft', sqft);
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('category', category);
+      formData.append('price', price.toString());
+      formData.append('unit', unit);
+      formData.append('location', `${exactLoc}, ${country}`);
+      formData.append('description', description);
+      formData.append('beds', beds.toString());
+      formData.append('baths', baths.toString());
+      formData.append('sqft', sqft.toString());
 
+      const headers = getAuthHeader();
+      delete headers['Content-Type'];
+
+      if (editingId) {
         const res = await fetch(`${API_URL}/api/properties/${editingId}`, {
           method: 'PUT',
-          headers: getAuthHeader(),
+          headers,
           body: formData
         });
-
         if(res.ok) {
           Alert.alert("Success", "Property updated!");
           setEditingId(null);
           refreshProperties();
           setAdminTab('manage');
         } else {
-          Alert.alert("Error", "Failed to update property.");
+          Alert.alert("Error", "Failed to update.");
         }
       } else {
-        // CREATE
-        const payload = {
-          title, category, price: parseFloat(price), unit, 
-          location: `${exactLoc}, ${country}`, 
-          description, beds: parseInt(beds), baths: parseInt(baths), 
-          sqft: parseInt(sqft), images: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9"
-        };
+        // Mock image file for form data since Expo fetch supports this format
+        formData.append('images', { uri: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9', name: 'img.jpg', type: 'image/jpeg' } as any);
         const res = await fetch(`${API_URL}/api/properties`, {
           method: 'POST',
-          headers: getAuthHeader(),
-          body: JSON.stringify(payload)
+          headers,
+          body: formData
         });
         if(res.ok) {
           Alert.alert("Success", "Property posted globally!");
           refreshProperties();
           setAdminTab('manage');
         } else {
-          Alert.alert("Error", "Failed to post property.");
+          Alert.alert("Error", "Failed to post.");
         }
       }
-      // Reset
-      setTitle(""); setPrice(""); setExactLoc(""); setDescription(""); setEditingId(null);
     } catch(e) {
-      Alert.alert("Error", "Server error.");
+      Alert.alert("Error", "Network error.");
+    } finally {
+      setIsSubmitting(false);
     }
-    setIsSubmitting(false);
   };
 
   return (
@@ -224,7 +230,7 @@ export default function AdminDashboardScreen() {
           </View>
         )}
 
-        {adminTab === 'logistics' && (
+                {adminTab === 'logistics' && (
           <View>
             {adminRequests.length === 0 ? <Text className="text-slate-500 text-center mt-10">No logistics requests globally.</Text> : adminRequests.map(req => (
               <View key={req.id} className={`${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-100'} p-4 rounded-2xl mb-4 border shadow-sm`}>
@@ -236,6 +242,27 @@ export default function AdminDashboardScreen() {
                 <Text className={`text-xs ${userSettings?.dark_mode ? 'text-slate-400' : 'text-slate-500'} mb-1`}>From: {req.origin || 'N/A'}</Text>
                 <Text className={`text-xs ${userSettings?.dark_mode ? 'text-slate-400' : 'text-slate-500'} mb-1`}>To: {req.destination || 'N/A'}</Text>
                 <Text className={`text-xs ${userSettings?.dark_mode ? 'text-slate-400' : 'text-slate-500'}`}>Date: {req.date}</Text>
+              </View>
+            ))}
+          </View>
+        )}
+
+        {adminTab === 'bookings' && (
+          <View>
+            {adminBookings.length === 0 ? <Text className="text-slate-500 text-center mt-10">No global property bookings yet.</Text> : adminBookings.map(b => (
+              <View key={b.id} className={`${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-100'} p-4 rounded-2xl mb-4 border shadow-sm`}>
+                <View className="flex-row justify-between mb-2">
+                  <Text className={`font-bold flex-1 mr-2 ${userSettings?.dark_mode ? 'text-white' : 'text-slate-900'}`} numberOfLines={1}>{b.property_title}</Text>
+                  <Text className="text-amber-500 font-bold">{currencySymbol}{getDisplayPrice(b.amount)}</Text>
+                </View>
+                <Text className={`text-xs ${userSettings?.dark_mode ? 'text-slate-400' : 'text-slate-500'} mb-1`}>User: <Text className="font-bold">{b.user_name}</Text> ({b.user_email})</Text>
+                <Text className={`text-xs ${userSettings?.dark_mode ? 'text-slate-400' : 'text-slate-500'} mb-1`}>Ref: {b.ref}</Text>
+                <View className="flex-row justify-between items-center mt-2">
+                  <Text className={`text-xs ${userSettings?.dark_mode ? 'text-slate-500' : 'text-slate-400'}`}>{new Date(b.date).toLocaleDateString()}</Text>
+                  <View className={`px-2 py-1 rounded-md ${b.status === 'Completed' ? 'bg-green-100' : 'bg-amber-100'}`}>
+                    <Text className={`text-[10px] font-bold ${b.status === 'Completed' ? 'text-green-700' : 'text-amber-700'}`}>{b.status.toUpperCase()}</Text>
+                  </View>
+                </View>
               </View>
             ))}
           </View>
