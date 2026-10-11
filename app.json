@@ -12,7 +12,8 @@
       "buildNumber": "19",
       "supportsTablet": true,
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSLocationWhenInUseUsageDescription": "Ridgenooks uses your location to discover luxury properties and accommodations near you."
       }
     },
     "android": {
@@ -23,7 +24,11 @@
       "predictiveBackGestureEnabled": false,
       "package": "com.ridgenooks.app",
       "versionCode": 19,
-      "softwareKeyboardLayoutMode": "resize"
+      "softwareKeyboardLayoutMode": "resize",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
     },
     "web": {
       "output": "static",

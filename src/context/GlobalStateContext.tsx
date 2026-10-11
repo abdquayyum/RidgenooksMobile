@@ -40,7 +40,7 @@ export const GlobalStateProvider = ({ children }) => {
   const [activeTab, setActiveTab] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   
-  const [userLocationText, setUserLocationText] = useState("Locating...");
+  const [userLocationText, setUserLocationText] = useState("Lagos, Nigeria");
   const [selectedLocationFilter, setSelectedLocationFilter] = useState("Auto");
   const [showLocationModal, setShowLocationModal] = useState(false);
   const [selectedTransaction, setSelectedTransaction] = useState(null);
@@ -157,38 +157,113 @@ export const GlobalStateProvider = ({ children }) => {
     }
   };
 
-  const detectLocation = async () => {
+  const setNigeriaLocation = () => {
+    setUserLocationText("Lagos, Nigeria");
+    setCurrencySymbol("₦");
+    setPaymentGateway('paystack');
+  };
+
+  const setUSALocation = () => {
+    setUserLocationText("USA");
+    setCurrencySymbol("$");
+    setPaymentGateway('stripe');
+  };
+
+  const detectLocationByIP = async () => {
     try {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        setUserLocationText("Location Denied");
-        return; 
-      }
-      let location = await Location.getCurrentPositionAsync({});
-      let reverseGeocode = await Location.reverseGeocodeAsync({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude
-      });
-      if (reverseGeocode && reverseGeocode.length > 0) {
-        const addr = reverseGeocode[0];
-        
-        if (addr.country && addr.country.toLowerCase() === 'nigeria') {
-          setUserLocationText("Lagos, Nigeria");
-          setCurrencySymbol("₦");
-          setPaymentGateway('paystack');
-        } else if (addr.country && (addr.country.toLowerCase() === 'united states' || addr.country.toLowerCase() === 'usa' || addr.isoCountryCode === 'US')) {
-          setUserLocationText("USA");
-          setCurrencySymbol("$");
-          setPaymentGateway('stripe');
-        } else {
-          setUserLocationText(`${addr.city || addr.region}, ${addr.country}`);
-          setCurrencySymbol("$");
-          setPaymentGateway('stripe');
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3500);
+      const res = await fetch('https://api.country.is', { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (res.ok) {
+        const data = await res.json();
+        const code = (data?.country || '').toUpperCase();
+        if (code === 'NG') {
+          setNigeriaLocation();
+          return true;
+        } else if (code === 'US') {
+          setUSALocation();
+          return true;
         }
       }
     } catch (e) {
+      // IP lookup fallback
+    }
+    return false;
+  };
+
+  const detectLocation = async () => {
+    try {
+      let { status } = await Location.getForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        const req = await Location.requestForegroundPermissionsAsync();
+        status = req.status;
+      }
+
+      if (status !== 'granted') {
+        const ipSuccess = await detectLocationByIP();
+        if (!ipSuccess) setNigeriaLocation();
+        return; 
+      }
+
+      // Check last known location first for fast response
+      let location = await Location.getLastKnownPositionAsync({}).catch(() => null);
+
+      if (!location) {
+        const posPromise = Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
+        const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Location timeout')), 6000));
+        location = await Promise.race([posPromise, timeoutPromise]).catch(() => null);
+      }
+
+      if (location?.coords) {
+        const { latitude: lat, longitude: lng } = location.coords;
+
+        // Direct coordinate check
+        // Nigeria bounding box: Lat 4.0 - 14.0, Lng 2.5 - 15.0
+        const inNigeriaCoords = lat >= 4.0 && lat <= 14.0 && lng >= 2.5 && lng <= 15.0;
+        // USA bounding box (inc. Alaska & Hawaii): Lat 18.0 - 72.0, Lng -180.0 - -65.0
+        const inUSACoords = lat >= 18.0 && lat <= 72.0 && lng >= -180.0 && lng <= -65.0;
+
+        if (inNigeriaCoords) {
+          setNigeriaLocation();
+          return;
+        } else if (inUSACoords) {
+          setUSALocation();
+          return;
+        }
+
+        // Reverse geocoding check
+        const revPromise = Location.reverseGeocodeAsync({ latitude: lat, longitude: lng });
+        const revTimeout = new Promise((_, reject) => setTimeout(() => reject(new Error('Geocode timeout')), 5000));
+        const reverseGeocode = await Promise.race([revPromise, revTimeout]).catch(() => null);
+
+        if (reverseGeocode && reverseGeocode.length > 0) {
+          const addr = reverseGeocode[0];
+          const countryStr = (addr.country || '').toLowerCase();
+          const iso = (addr.isoCountryCode || '').toUpperCase();
+          const regionStr = (addr.region || '').toLowerCase();
+
+          if (iso === 'NG' || countryStr.includes('nigeria') || regionStr.includes('nigeria')) {
+            setNigeriaLocation();
+            return;
+          } else if (iso === 'US' || countryStr.includes('united states') || countryStr.includes('usa')) {
+            setUSALocation();
+            return;
+          } else {
+            setUserLocationText(`${addr.city || addr.region || 'International'}, ${addr.country || ''}`);
+            setCurrencySymbol("$");
+            setPaymentGateway('stripe');
+            return;
+          }
+        }
+      }
+
+      const ipSuccess = await detectLocationByIP();
+      if (!ipSuccess) setNigeriaLocation();
+    } catch (e) {
       console.warn("Location error:", e);
-      setUserLocationText("Unknown Location");
+      const ipSuccess = await detectLocationByIP();
+      if (!ipSuccess) setNigeriaLocation();
     }
   };
 
@@ -227,10 +302,19 @@ export const GlobalStateProvider = ({ children }) => {
     const matchesTab = activeTab === "All" || p.category === activeTab;
     const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || p.location.toLowerCase().includes(searchQuery.toLowerCase());
     let matchesLocation = true;
-    if (activeLocation !== 'All Locations' && activeLocation !== 'Locating...' && activeLocation !== 'Location Denied') {
-      const locTerms = activeLocation.toLowerCase().split(',').map(s => s.trim());
-      const propLoc = p.location.toLowerCase();
-      matchesLocation = locTerms.some(term => propLoc.includes(term));
+    if (activeLocation && activeLocation !== 'All Locations' && activeLocation !== 'Locating...') {
+      const isNigeria = activeLocation.toLowerCase().includes('nigeria') || activeLocation.toLowerCase().includes('lagos');
+      const isUSA = activeLocation.toLowerCase().includes('usa') || activeLocation.toLowerCase().includes('united states');
+      const propLoc = (p.location || '').toLowerCase();
+
+      if (isNigeria) {
+        matchesLocation = propLoc.includes('nigeria') || propLoc.includes('lagos');
+      } else if (isUSA) {
+        matchesLocation = propLoc.includes('usa') || propLoc.includes('united states');
+      } else {
+        const locTerms = activeLocation.toLowerCase().split(',').map(s => s.trim()).filter(Boolean);
+        matchesLocation = locTerms.some(term => propLoc.includes(term));
+      }
     }
     return matchesTab && matchesSearch && matchesLocation;
   });
