@@ -23,7 +23,21 @@ export default function HomeScreen() {
 
   useFocusEffect(useCallback(() => { refreshProperties(); }, [refreshProperties]));
 
-  const categories = ["All", "Apartments", "Villas", "Lofts", "Penthouses", "Studios"];
+  const categories = [
+    "All",
+    "Apartments",
+    "Short Stay",
+    "Condos",
+    "Duplex",
+    "Terrace",
+    "Flats",
+    "Villas",
+    "Single Family Homes",
+    "Multi Family Homes",
+    "Lofts",
+    "Penthouses",
+    "Studios"
+  ];
 
   return (
     <View className={`flex-1 ${userSettings?.dark_mode ? 'bg-slate-900' : 'bg-slate-50'}`}>

@@ -299,7 +299,19 @@ export const GlobalStateProvider = ({ children }) => {
 
   const activeLocation = selectedLocationFilter === 'Auto' ? userLocationText : selectedLocationFilter;
   const filteredProperties = properties.filter(p => {
-    const matchesTab = activeTab === "All" || p.category === activeTab;
+    const tabLower = (activeTab || '').toLowerCase();
+    const catLower = (p.category || '').toLowerCase();
+    const titleLower = (p.title || '').toLowerCase();
+    const unitLower = (p.unit || '').toLowerCase();
+
+    let matchesTab = activeTab === "All" || catLower === tabLower;
+    if (!matchesTab) {
+      if (tabLower === "apartments") {
+        matchesTab = catLower === "short stay" || catLower === "flats" || catLower === "flat" || catLower === "condos" || catLower === "condo" || titleLower.includes("apartment");
+      } else if (tabLower === "short stay") {
+        matchesTab = catLower === "short stay" || ((catLower === "apartments" || titleLower.includes("apartment")) && (unitLower === "night" || unitLower.includes("night")));
+      }
+    }
     const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || p.location.toLowerCase().includes(searchQuery.toLowerCase());
     let matchesLocation = true;
     if (activeLocation && activeLocation !== 'All Locations' && activeLocation !== 'Locating...') {

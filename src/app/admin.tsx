@@ -45,7 +45,7 @@ export default function AdminDashboardScreen() {
     setCategory(p.category);
     setUnit(p.unit);
     // Split location: "Exact Location, Country"
-    const parts = p.location.split(', ');
+    const parts = (p.location || '').split(', ');
     let loadedCountry = "Nigeria";
     if (parts.length > 1) {
       loadedCountry = parts.pop();
@@ -202,7 +202,29 @@ export default function AdminDashboardScreen() {
             
             {/* Made responsive by changing to column layout on mobile */}
             <View className="mb-4">
-              <View className="mb-3"><Text className="text-slate-500 text-xs mb-1 uppercase font-bold">Category</Text><TextInput value={category} onChangeText={setCategory} className={`h-12 px-4 rounded-xl border ${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-slate-200'}`} /></View>
+              <View className="mb-3">
+                <Text className="text-slate-500 text-xs mb-1 uppercase font-bold">Category</Text>
+                <View className={`flex-row flex-wrap gap-2 mb-2`}>
+                  {[
+                    'Apartments',
+                    'Short Stay',
+                    'Condos',
+                    'Duplex',
+                    'Terrace',
+                    'Flats',
+                    'Villas',
+                    'Single Family Homes',
+                    'Multi Family Homes',
+                    'Lofts',
+                    'Penthouses',
+                    'Studios'
+                  ].map(cat => (
+                    <TouchableOpacity key={cat} onPress={() => setCategory(cat)} className={`px-3 py-2 rounded-full border ${category === cat ? 'bg-amber-500 border-amber-500' : (userSettings?.dark_mode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200')}`}>
+                      <Text className={`text-xs font-bold ${category === cat ? 'text-white' : (userSettings?.dark_mode ? 'text-slate-300' : 'text-slate-600')}`}>{cat}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+              </View>
               <View className="mb-3">
               <Text className="text-slate-500 text-xs mb-1 uppercase font-bold">Price ({country === 'Nigeria' ? '₦ (Naira)' : '$ (USD)'})</Text>
               <View className="relative justify-center">
@@ -210,7 +232,17 @@ export default function AdminDashboardScreen() {
                 <TextInput value={price} onChangeText={setPrice} keyboardType="numeric" className={`h-12 pl-10 pr-4 rounded-xl border ${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-slate-200'}`} />
               </View>
             </View>
-              <View className="mb-3"><Text className="text-slate-500 text-xs mb-1 uppercase font-bold">Unit</Text><TextInput value={unit} onChangeText={setUnit} className={`h-12 px-4 rounded-xl border ${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-slate-200'}`} /></View>
+              <View className="mb-3">
+                <Text className="text-slate-500 text-xs mb-1 uppercase font-bold">Billing Unit</Text>
+                <View className="flex-row gap-2 mb-2">
+                  {['night', 'monthly', 'annually'].map(u => (
+                    <TouchableOpacity key={u} onPress={() => setUnit(u)} className={`px-3 py-1.5 rounded-full border ${unit === u ? 'bg-amber-500 border-amber-500' : (userSettings?.dark_mode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200')}`}>
+                      <Text className={`text-xs font-bold ${unit === u ? 'text-white' : (userSettings?.dark_mode ? 'text-slate-300' : 'text-slate-600')}`}>{u}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+                <TextInput value={unit} onChangeText={setUnit} placeholder="e.g. night, monthly" className={`h-12 px-4 rounded-xl border ${userSettings?.dark_mode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-slate-200'}`} />
+              </View>
             </View>
 
             <Text className="text-slate-500 text-xs mb-1 uppercase font-bold tracking-wider">Country</Text>
